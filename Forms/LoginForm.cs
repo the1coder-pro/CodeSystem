@@ -1,12 +1,7 @@
-﻿using CodeSystem.Repositories;
+﻿using CodeSystem.Models;
+using CodeSystem.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeSystem
@@ -37,7 +32,8 @@ namespace CodeSystem
 
             var repo = new UserRepository();
             var users = repo.GetUsers();
-            foreach ( var user in users ) {
+            foreach (var user in users)
+            {
                 dataTable.Rows.Add(user.Id, user.Username, user.Password);
                 Console.WriteLine(user.Username);
             }
@@ -46,7 +42,7 @@ namespace CodeSystem
             {
                 usernameComboBox.Items.Add(dataTable.Rows[i]["Username"]);
             }
-            
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -62,7 +58,7 @@ namespace CodeSystem
                 MessageBox.Show("يجب اختيار اسم المستخدم أولا");
                 return;
             }
-            
+
             if (password == "")
             {
                 MessageBox.Show("يجب إدخال كلمة المرور أولا");
@@ -82,7 +78,13 @@ namespace CodeSystem
             else
             {
                 this.Hide();
+
+                // Example of setting data
+                CurrentUser.Instance.user = user;
+                CurrentUser.Instance.appVersion = "V1.0.0";
+
                 MainForm mainForm = new MainForm();
+
                 mainForm.ShowDialog();
                 this.Show();
                 usernameComboBox.Text = "";

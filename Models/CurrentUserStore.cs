@@ -26,5 +26,7 @@ namespace CodeSystem.Models
         // Properties to store user data
         public User user { get; set; }
         public string appVersion { get; set; }
+
+        public string language { get; set; } = "ar"; // Default language
     }
 }

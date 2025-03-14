@@ -20,6 +20,8 @@ namespace CodeSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             /* load users in combobox */
+            // select the first item in the combobox
+           
         }
 
         private void GetUsers()
@@ -93,6 +95,11 @@ namespace CodeSystem
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

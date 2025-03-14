@@ -56,10 +56,12 @@
             this.usernameComboBox.Font = new System.Drawing.Font("IBM Plex Sans Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameComboBox.FormattingEnabled = true;
             this.usernameComboBox.Location = new System.Drawing.Point(219, 42);
+            this.usernameComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameComboBox.Name = "usernameComboBox";
             this.usernameComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.usernameComboBox.Size = new System.Drawing.Size(267, 37);
             this.usernameComboBox.TabIndex = 2;
+            this.usernameComboBox.SelectedIndexChanged += new System.EventHandler(this.usernameComboBox_SelectedIndexChanged);
             // 
             // passwordTextBox
             // 
@@ -80,7 +82,7 @@
             this.loginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.loginBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(86)))), ((int)(((byte)(131)))));
             this.loginBtn.Font = new System.Drawing.Font("IBM Plex Sans Arabic Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.Location = new System.Drawing.Point(219, 209);
@@ -94,10 +96,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Arabic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(31)))), ((int)(((byte)(25)))));
             this.label1.Location = new System.Drawing.Point(12, 241);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 29);
+            this.label1.Size = new System.Drawing.Size(189, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "أركان البلاد للمراقبة الأمنية";
             // 
@@ -145,7 +149,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 197);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

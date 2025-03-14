@@ -177,11 +177,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>codesystemdbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Components\InvoicesForm.cs">
+    <Compile Include="Forms\AccountsForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\InvoicesForm.Designer.cs">
+    <Compile Include="Forms\AccountsForm.Designer.cs">
+      <DependentUpon>AccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoicesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\InvoicesForm.Designer.cs">
       <DependentUpon>InvoicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ItemsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemsForm.Designer.cs">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -196,6 +208,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CurrentUserStore.cs" />
+    <Compile Include="Models\TranslationHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
@@ -205,8 +218,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\UserRepository.cs" />
-    <EmbeddedResource Include="Components\InvoicesForm.resx">
+    <EmbeddedResource Include="Forms\AccountsForm.resx">
+      <DependentUpon>AccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoicesForm.resx">
       <DependentUpon>InvoicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemsForm.resx">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

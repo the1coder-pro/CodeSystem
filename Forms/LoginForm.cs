@@ -1,6 +1,8 @@
 ﻿using CodeSystem.Models;
 using CodeSystem.Repositories;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -11,46 +13,23 @@ namespace CodeSystem
         public LoginForm()
         {
             InitializeComponent();
+            UserRepository userRepository = new UserRepository();
 
-            GetUsers();
+            usernameComboBox.DataSource = User.UsernameList();
 
+            // set the value member
+            usernameComboBox.ValueMember = "ID";
+            usernameComboBox.SelectedIndex = 0;
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            /* load users in combobox */
-            // select the first item in the combobox
-           
-        }
-
-        private void GetUsers()
-        {
-            DataTable dataTable = new DataTable();
-
-            dataTable.Columns.Add("Id", typeof(int));
-            dataTable.Columns.Add("Username", typeof(string));
-            dataTable.Columns.Add("Password", typeof(string));
-
-            var repo = new UserRepository();
-            var users = repo.GetUsers();
-            foreach (var user in users)
-            {
-                dataTable.Rows.Add(user.Id, user.Username, user.Password);
-                Console.WriteLine(user.Username);
-            }
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                usernameComboBox.Items.Add(dataTable.Rows[i]["Username"]);
-            }
-
+            // set the display member
+            usernameComboBox.DisplayMember = "Username";
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            // Get the username and password from the textboxes
 
+
+            //Get the username and password from the textboxes
             string username = usernameComboBox.Text;
             string password = passwordTextBox.Text;
 
@@ -68,30 +47,90 @@ namespace CodeSystem
             }
 
             // Check if the username and password are correct
-            UserRepository userRepository = new UserRepository();
-            User user = userRepository.loginUser(username, password);
-            if (user.Username == null)
+            User user = new User(usernameComboBox.Text, passwordTextBox.Text);
+
+
+            
+            if (user.Password.IsNullOrEmpty())
             {
                 MessageBox.Show("كلمة المرور غير صحيحة");
                 passwordTextBox.Focus();
 
                 return;
             }
+
+           
+            if (user.Authenticate())
+            {
+                User.GetUserGroupID(int.Parse(usernameComboBox.SelectedValue.ToString()));
+
+                // get use rdetails
+                DataTable userTable = User.CurrentUserDetail(int.Parse(usernameComboBox.SelectedValue.ToString()));
+
+                // convert user table to user object
+                var currentUser = new User(
+                    intID: int.Parse(userTable.Rows[0]["ID"].ToString()),
+                    strNamear: userTable.Rows[0]["NameAr"].ToString(),
+                    strNameEn: userTable.Rows[0]["NameEn"].ToString(),
+                    strUserName: userTable.Rows[0]["UserName"].ToString(),
+                    strPassword: userTable.Rows[0]["Password"].ToString(),
+                    datFirstEntry: DateTime.Parse(userTable.Rows[0]["FirstEntry"].ToString()),
+                    datLastEntry: DateTime.Parse(userTable.Rows[0]["LastEntry"].ToString()),
+                    bytUserGroupID: byte.Parse(userTable.Rows[0]["UserGroupID"].ToString()),
+                    intCurrentStatusID: int.Parse(userTable.Rows[0]["CurrentStatusID"].ToString()),
+                    bolStopped: bool.Parse(userTable.Rows[0]["Stopped"].ToString())
+                    );
+
+
+
+                //GetDevalutUserMoneyaccount(cmb_UserID.SelectedValue);
+                //this.Visible = false;
+                //currentLanguage = Language.ar;
+
+                this.Hide();
+                CurrentUser.Instance.user = currentUser;
+                CurrentUser.Instance.appVersion = "V1.0.0";
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
+                // InvoiceTypeSelectForm.Show();
+                this.Show();
+                
+                passwordTextBox.Text = "";
+
+
+
+                //var myTransactionHistory = new TransactionHistoryModel();
+                //myTransactionHistory.ObjectID = ObjectEnum.frmLogIn;
+                //myTransactionHistory.PCID = intThisPCID;
+                //myTransactionHistory.RecordData = DateTime.Now.ToShortDateString();
+                //myTransactionHistory.RecordDataar = this.cmb_UserID.Text + " - " + this.txt_Password.Text;
+                //myTransactionHistory.RecordDataEn = this.cmb_UserID.Text + " - " + this.txt_Password.Text;
+                //myTransactionHistory.RecordID = Convert.ToInt32(cmb_UserID.SelectedValue);
+                //myTransactionHistory.TransactionTime = DateTime.Now.ToShortTimeString();
+                //myTransactionHistory.TransactionTypeID = TransactionTypeEnum.Sign_In;
+                //myTransactionHistory.UserID = Convert.ToInt32(cmb_UserID.SelectedValue);
+                //myTransactionHistory.Add();
+            }
             else
             {
-                this.Hide();
+                //var myTransactionHistory = new TransactionHistoryModel();
+                //myTransactionHistory.ObjectID = ObjectEnum.frmLogIn;
+                //myTransactionHistory.PCID = intThisPCID;
+                //myTransactionHistory.RecordData = DateTime.Now.ToShortDateString();
+                //myTransactionHistory.RecordDataar = this.cmb_UserID.Text + " - " + this.txt_Password.Text;
+                //myTransactionHistory.RecordDataEn = this.cmb_UserID.Text + " - " + this.txt_Password.Text;
+                //myTransactionHistory.RecordID = Convert.ToInt32(cmb_UserID.SelectedValue);
+                //myTransactionHistory.TransactionTime = DateTime.Now.ToShortTimeString();
+                //myTransactionHistory.TransactionTypeID = TransactionTypeEnum.Password_Wrong;
+                //myTransactionHistory.UserID = Convert.ToInt32(cmb_UserID.SelectedValue);
+                //myTransactionHistory.Add();
 
-                // Example of setting data
-                CurrentUser.Instance.user = user;
-                CurrentUser.Instance.appVersion = "V1.0.0";
-
-                MainForm mainForm = new MainForm();
-
-                mainForm.ShowDialog();
-                this.Show();
-                usernameComboBox.Text = "";
+                // Status_Label.Text = "كلمة المرور غير صحيحة، حاول مرة أخرى"
+                passwordTextBox.Focus();
                 passwordTextBox.Text = "";
             }
+
+
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
@@ -101,6 +140,33 @@ namespace CodeSystem
 
         private void usernameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            UserRepository repo = new UserRepository();
+            DataTable tblItem =  repo.GetTableData("tblItem1");
+            List<string> tblItemColumns = repo.GetColumns("tblItem1");
+
+            // list all columns
+            foreach (var column in tblItemColumns)
+            {
+                Console.WriteLine(column);
+            }
+
+            foreach (DataRow row in tblItem.Rows)
+            {
+                foreach (var column in tblItemColumns)
+                {
+                    Console.WriteLine(column);
+                    Console.WriteLine(row[column]);
+                }
+            
+               
+            }
+
+     
 
         }
     }

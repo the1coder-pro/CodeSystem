@@ -22,7 +22,7 @@ namespace CodeSystem
         {
             InitializeComponent();
 
-            currentUsernameLabel.Text = CurrentUser.Instance.user.Username;
+            currentUsernameLabel.Text = CurrentUser.Instance.user.NameArabic;
             versionLabel.Text = CurrentUser.Instance.appVersion;
                
 

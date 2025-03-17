@@ -115,7 +115,7 @@
             this.Exit_Button.Location = new System.Drawing.Point(4, 121);
             this.Exit_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_Button.Name = "Exit_Button";
-            this.Exit_Button.Size = new System.Drawing.Size(81, 109);
+            this.Exit_Button.Size = new System.Drawing.Size(74, 109);
             this.Exit_Button.TabIndex = 65;
             this.Exit_Button.Text = "خروج";
             this.Exit_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -136,7 +136,7 @@
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 449F));
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
-            this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
+            this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.TableLayoutPanel6.Controls.Add(this.SearchIn_ComboBox, 4, 0);
             this.TableLayoutPanel6.Controls.Add(this.SearchFor_Label, 3, 0);
             this.TableLayoutPanel6.Controls.Add(this.SearchIn_Label, 5, 0);
@@ -149,7 +149,7 @@
             this.TableLayoutPanel6.Name = "TableLayoutPanel6";
             this.TableLayoutPanel6.RowCount = 1;
             this.TableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanel6.Size = new System.Drawing.Size(1160, 54);
+            this.TableLayoutPanel6.Size = new System.Drawing.Size(1080, 54);
             this.TableLayoutPanel6.TabIndex = 1;
             // 
             // SearchIn_ComboBox
@@ -157,7 +157,7 @@
             this.SearchIn_ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchIn_ComboBox.Font = new System.Drawing.Font("Tahoma", 12F);
             this.SearchIn_ComboBox.FormattingEnabled = true;
-            this.SearchIn_ComboBox.Location = new System.Drawing.Point(846, 4);
+            this.SearchIn_ComboBox.Location = new System.Drawing.Point(763, 4);
             this.SearchIn_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchIn_ComboBox.Name = "SearchIn_ComboBox";
             this.SearchIn_ComboBox.Size = new System.Drawing.Size(166, 32);
@@ -168,7 +168,7 @@
             this.SearchFor_Label.AutoSize = true;
             this.SearchFor_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchFor_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchFor_Label.Location = new System.Drawing.Point(746, 0);
+            this.SearchFor_Label.Location = new System.Drawing.Point(663, 0);
             this.SearchFor_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchFor_Label.Name = "SearchFor_Label";
             this.SearchFor_Label.Size = new System.Drawing.Size(92, 54);
@@ -181,10 +181,10 @@
             this.SearchIn_Label.AutoSize = true;
             this.SearchIn_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchIn_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchIn_Label.Location = new System.Drawing.Point(1020, 0);
+            this.SearchIn_Label.Location = new System.Drawing.Point(937, 0);
             this.SearchIn_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchIn_Label.Name = "SearchIn_Label";
-            this.SearchIn_Label.Size = new System.Drawing.Size(136, 54);
+            this.SearchIn_Label.Size = new System.Drawing.Size(139, 54);
             this.SearchIn_Label.TabIndex = 0;
             this.SearchIn_Label.Text = "البحث في";
             this.SearchIn_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,10 +193,10 @@
             // 
             this.SearchInMyList_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchInMyList_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInMyList_Button.Location = new System.Drawing.Point(178, 4);
+            this.SearchInMyList_Button.Location = new System.Drawing.Point(129, 4);
             this.SearchInMyList_Button.Margin = new System.Windows.Forms.Padding(4);
             this.SearchInMyList_Button.Name = "SearchInMyList_Button";
-            this.SearchInMyList_Button.Size = new System.Drawing.Size(111, 46);
+            this.SearchInMyList_Button.Size = new System.Drawing.Size(77, 46);
             this.SearchInMyList_Button.TabIndex = 2;
             this.SearchInMyList_Button.Text = "البحث في قائمتي";
             this.SearchInMyList_Button.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@
             this.SearchOutList_Button.Location = new System.Drawing.Point(4, 4);
             this.SearchOutList_Button.Margin = new System.Windows.Forms.Padding(4);
             this.SearchOutList_Button.Name = "SearchOutList_Button";
-            this.SearchOutList_Button.Size = new System.Drawing.Size(166, 46);
+            this.SearchOutList_Button.Size = new System.Drawing.Size(117, 46);
             this.SearchOutList_Button.TabIndex = 3;
             this.SearchOutList_Button.Text = "البحث في القائمة الخارجية";
             this.SearchOutList_Button.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             // 
             this.SearchFor_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchFor_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.SearchFor_TextBox.Location = new System.Drawing.Point(297, 4);
+            this.SearchFor_TextBox.Location = new System.Drawing.Point(214, 4);
             this.SearchFor_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchFor_TextBox.Name = "SearchFor_TextBox";
             this.SearchFor_TextBox.Size = new System.Drawing.Size(441, 41);
@@ -229,7 +229,7 @@
             this.TableLayoutPanel9.ColumnCount = 3;
             this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.13662F));
             this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.86337F));
-            this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.TableLayoutPanel9.Controls.Add(this.SearchResult_Label, 2, 0);
             this.TableLayoutPanel9.Controls.Add(this.Result_DataGridView, 1, 0);
             this.TableLayoutPanel9.Controls.Add(this.Add_Button, 0, 0);
@@ -239,7 +239,7 @@
             this.TableLayoutPanel9.Name = "TableLayoutPanel9";
             this.TableLayoutPanel9.RowCount = 1;
             this.TableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanel9.Size = new System.Drawing.Size(1160, 95);
+            this.TableLayoutPanel9.Size = new System.Drawing.Size(1080, 95);
             this.TableLayoutPanel9.TabIndex = 2;
             // 
             // SearchResult_Label
@@ -247,10 +247,10 @@
             this.SearchResult_Label.AutoSize = true;
             this.SearchResult_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchResult_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchResult_Label.Location = new System.Drawing.Point(969, 0);
+            this.SearchResult_Label.Location = new System.Drawing.Point(886, 0);
             this.SearchResult_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchResult_Label.Name = "SearchResult_Label";
-            this.SearchResult_Label.Size = new System.Drawing.Size(187, 95);
+            this.SearchResult_Label.Size = new System.Drawing.Size(190, 95);
             this.SearchResult_Label.TabIndex = 0;
             this.SearchResult_Label.Text = "نتيجة البحث";
             this.SearchResult_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,12 +266,12 @@
             this.SearchedItemPrice_Column,
             this.SearchedUnitCount_Column});
             this.Result_DataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Result_DataGridView.Location = new System.Drawing.Point(111, 4);
+            this.Result_DataGridView.Location = new System.Drawing.Point(102, 4);
             this.Result_DataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.Result_DataGridView.Name = "Result_DataGridView";
             this.Result_DataGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Result_DataGridView.RowHeadersWidth = 51;
-            this.Result_DataGridView.Size = new System.Drawing.Size(850, 87);
+            this.Result_DataGridView.Size = new System.Drawing.Size(776, 87);
             this.Result_DataGridView.TabIndex = 1;
             // 
             // ItemNameAr_Column
@@ -320,7 +320,7 @@
             this.Add_Button.Location = new System.Drawing.Point(4, 4);
             this.Add_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(99, 87);
+            this.Add_Button.Size = new System.Drawing.Size(90, 87);
             this.Add_Button.TabIndex = 2;
             this.Add_Button.Text = "إضافة";
             this.Add_Button.UseVisualStyleBackColor = true;
@@ -330,14 +330,15 @@
             this.New_Button.BackColor = System.Drawing.Color.White;
             this.New_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.New_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.New_Button.Location = new System.Drawing.Point(184, 5);
+            this.New_Button.Location = new System.Drawing.Point(170, 5);
             this.New_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.New_Button.Name = "New_Button";
-            this.New_Button.Size = new System.Drawing.Size(77, 107);
+            this.New_Button.Size = new System.Drawing.Size(72, 107);
             this.New_Button.TabIndex = 56;
             this.New_Button.Text = "جديد";
             this.New_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.New_Button.UseVisualStyleBackColor = false;
+            this.New_Button.Click += new System.EventHandler(this.New_Button_Click);
             // 
             // GroupID_Column
             // 
@@ -433,10 +434,10 @@
             this.Delete_Button.BackColor = System.Drawing.Color.White;
             this.Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Delete_Button.Location = new System.Drawing.Point(95, 122);
+            this.Delete_Button.Location = new System.Drawing.Point(88, 122);
             this.Delete_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(77, 107);
+            this.Delete_Button.Size = new System.Drawing.Size(70, 107);
             this.Delete_Button.TabIndex = 61;
             this.Delete_Button.Text = "حذف";
             this.Delete_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -466,8 +467,9 @@
             this.ItemList_DataGridView.Name = "ItemList_DataGridView";
             this.ItemList_DataGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ItemList_DataGridView.RowHeadersWidth = 51;
-            this.ItemList_DataGridView.Size = new System.Drawing.Size(1160, 268);
+            this.ItemList_DataGridView.Size = new System.Drawing.Size(1080, 268);
             this.ItemList_DataGridView.TabIndex = 3;
+            this.ItemList_DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemList_DataGridView_CellClick);
             // 
             // TableLayoutPanel1
             // 
@@ -486,7 +488,7 @@
             this.TableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.38095F));
             this.TableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.TableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.TableLayoutPanel1.Size = new System.Drawing.Size(1168, 691);
+            this.TableLayoutPanel1.Size = new System.Drawing.Size(1088, 691);
             this.TableLayoutPanel1.TabIndex = 1;
             // 
             // TableLayoutPanel2
@@ -504,7 +506,7 @@
             this.TableLayoutPanel2.Name = "TableLayoutPanel2";
             this.TableLayoutPanel2.RowCount = 1;
             this.TableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel2.Size = new System.Drawing.Size(1160, 242);
+            this.TableLayoutPanel2.Size = new System.Drawing.Size(1080, 242);
             this.TableLayoutPanel2.TabIndex = 0;
             // 
             // TableLayoutPanel3
@@ -514,20 +516,20 @@
             this.TableLayoutPanel3.Controls.Add(this.TableLayoutPanel4, 0, 1);
             this.TableLayoutPanel3.Controls.Add(this.Title_Label, 0, 0);
             this.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TableLayoutPanel3.Location = new System.Drawing.Point(691, 4);
+            this.TableLayoutPanel3.Location = new System.Drawing.Point(644, 4);
             this.TableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.TableLayoutPanel3.Name = "TableLayoutPanel3";
             this.TableLayoutPanel3.RowCount = 2;
             this.TableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.79487F));
             this.TableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.20513F));
-            this.TableLayoutPanel3.Size = new System.Drawing.Size(465, 234);
+            this.TableLayoutPanel3.Size = new System.Drawing.Size(432, 234);
             this.TableLayoutPanel3.TabIndex = 0;
             // 
             // TableLayoutPanel4
             // 
             this.TableLayoutPanel4.ColumnCount = 2;
-            this.TableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.34456F));
-            this.TableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.65544F));
+            this.TableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.70755F));
+            this.TableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.29245F));
             this.TableLayoutPanel4.Controls.Add(this.ItemNote_TextBox, 0, 4);
             this.TableLayoutPanel4.Controls.Add(this.ShortName_TextBox, 0, 3);
             this.TableLayoutPanel4.Controls.Add(this.NameEn_TextBox, 0, 2);
@@ -549,50 +551,50 @@
             this.TableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.TableLayoutPanel4.Size = new System.Drawing.Size(457, 176);
+            this.TableLayoutPanel4.Size = new System.Drawing.Size(424, 176);
             this.TableLayoutPanel4.TabIndex = 0;
             // 
             // ItemNote_TextBox
             // 
             this.ItemNote_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemNote_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ItemNote_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ItemNote_TextBox.Location = new System.Drawing.Point(4, 144);
             this.ItemNote_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ItemNote_TextBox.Name = "ItemNote_TextBox";
-            this.ItemNote_TextBox.Size = new System.Drawing.Size(336, 41);
+            this.ItemNote_TextBox.Size = new System.Drawing.Size(207, 34);
             this.ItemNote_TextBox.TabIndex = 11;
             this.ItemNote_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ShortName_TextBox
             // 
             this.ShortName_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShortName_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ShortName_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ShortName_TextBox.Location = new System.Drawing.Point(4, 109);
             this.ShortName_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ShortName_TextBox.Name = "ShortName_TextBox";
-            this.ShortName_TextBox.Size = new System.Drawing.Size(336, 41);
+            this.ShortName_TextBox.Size = new System.Drawing.Size(207, 34);
             this.ShortName_TextBox.TabIndex = 9;
             this.ShortName_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // NameEn_TextBox
             // 
             this.NameEn_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameEn_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NameEn_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.NameEn_TextBox.Location = new System.Drawing.Point(4, 74);
             this.NameEn_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameEn_TextBox.Name = "NameEn_TextBox";
-            this.NameEn_TextBox.Size = new System.Drawing.Size(336, 41);
+            this.NameEn_TextBox.Size = new System.Drawing.Size(207, 34);
             this.NameEn_TextBox.TabIndex = 8;
             this.NameEn_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // NameAr_TextBox
             // 
             this.NameAr_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameAr_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NameAr_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.NameAr_TextBox.Location = new System.Drawing.Point(4, 39);
             this.NameAr_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameAr_TextBox.Name = "NameAr_TextBox";
-            this.NameAr_TextBox.Size = new System.Drawing.Size(336, 41);
+            this.NameAr_TextBox.Size = new System.Drawing.Size(207, 34);
             this.NameAr_TextBox.TabIndex = 7;
             this.NameAr_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -601,10 +603,10 @@
             this.GroupID_Label.AutoSize = true;
             this.GroupID_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupID_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupID_Label.Location = new System.Drawing.Point(348, 0);
+            this.GroupID_Label.Location = new System.Drawing.Point(219, 0);
             this.GroupID_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupID_Label.Name = "GroupID_Label";
-            this.GroupID_Label.Size = new System.Drawing.Size(105, 35);
+            this.GroupID_Label.Size = new System.Drawing.Size(201, 35);
             this.GroupID_Label.TabIndex = 0;
             this.GroupID_Label.Text = "رقم المجموعة";
             this.GroupID_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -614,10 +616,10 @@
             this.NameAr_Label.AutoSize = true;
             this.NameAr_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameAr_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameAr_Label.Location = new System.Drawing.Point(348, 35);
+            this.NameAr_Label.Location = new System.Drawing.Point(219, 35);
             this.NameAr_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameAr_Label.Name = "NameAr_Label";
-            this.NameAr_Label.Size = new System.Drawing.Size(105, 35);
+            this.NameAr_Label.Size = new System.Drawing.Size(201, 35);
             this.NameAr_Label.TabIndex = 1;
             this.NameAr_Label.Text = "اسم الصنف عربي";
             this.NameAr_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -627,10 +629,10 @@
             this.NameEn_Label.AutoSize = true;
             this.NameEn_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameEn_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameEn_Label.Location = new System.Drawing.Point(348, 70);
+            this.NameEn_Label.Location = new System.Drawing.Point(219, 70);
             this.NameEn_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameEn_Label.Name = "NameEn_Label";
-            this.NameEn_Label.Size = new System.Drawing.Size(105, 35);
+            this.NameEn_Label.Size = new System.Drawing.Size(201, 35);
             this.NameEn_Label.TabIndex = 2;
             this.NameEn_Label.Text = "اسم الصنف إنجليزي";
             this.NameEn_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -640,10 +642,10 @@
             this.ShortName_Label.AutoSize = true;
             this.ShortName_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ShortName_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShortName_Label.Location = new System.Drawing.Point(348, 105);
+            this.ShortName_Label.Location = new System.Drawing.Point(219, 105);
             this.ShortName_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ShortName_Label.Name = "ShortName_Label";
-            this.ShortName_Label.Size = new System.Drawing.Size(105, 35);
+            this.ShortName_Label.Size = new System.Drawing.Size(201, 35);
             this.ShortName_Label.TabIndex = 3;
             this.ShortName_Label.Text = "الاسم المختصر عربي";
             this.ShortName_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -653,10 +655,10 @@
             this.ItemNote_Label.AutoSize = true;
             this.ItemNote_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ItemNote_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemNote_Label.Location = new System.Drawing.Point(348, 140);
+            this.ItemNote_Label.Location = new System.Drawing.Point(219, 140);
             this.ItemNote_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ItemNote_Label.Name = "ItemNote_Label";
-            this.ItemNote_Label.Size = new System.Drawing.Size(105, 36);
+            this.ItemNote_Label.Size = new System.Drawing.Size(201, 36);
             this.ItemNote_Label.TabIndex = 5;
             this.ItemNote_Label.Text = "الملاحظات";
             this.ItemNote_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -664,11 +666,11 @@
             // GroupID_TextBox
             // 
             this.GroupID_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GroupID_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.GroupID_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.GroupID_TextBox.Location = new System.Drawing.Point(4, 4);
             this.GroupID_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GroupID_TextBox.Name = "GroupID_TextBox";
-            this.GroupID_TextBox.Size = new System.Drawing.Size(336, 41);
+            this.GroupID_TextBox.Size = new System.Drawing.Size(207, 34);
             this.GroupID_TextBox.TabIndex = 6;
             this.GroupID_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -680,7 +682,7 @@
             this.Title_Label.Location = new System.Drawing.Point(4, 0);
             this.Title_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(457, 50);
+            this.Title_Label.Size = new System.Drawing.Size(424, 50);
             this.Title_Label.TabIndex = 1;
             this.Title_Label.Text = "التصنيف";
             this.Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -688,8 +690,8 @@
             // TableLayoutPanel5
             // 
             this.TableLayoutPanel5.ColumnCount = 2;
-            this.TableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.66667F));
-            this.TableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.33333F));
+            this.TableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.85106F));
+            this.TableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.14894F));
             this.TableLayoutPanel5.Controls.Add(this.Image_Label, 1, 0);
             this.TableLayoutPanel5.Controls.Add(this.UseTypeID_Label, 1, 1);
             this.TableLayoutPanel5.Controls.Add(this.ItemTypeID__Label, 1, 2);
@@ -699,7 +701,7 @@
             this.TableLayoutPanel5.Controls.Add(this.TableLayoutPanel11, 0, 3);
             this.TableLayoutPanel5.Controls.Add(this.VAT_Label, 1, 3);
             this.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TableLayoutPanel5.Location = new System.Drawing.Point(279, 4);
+            this.TableLayoutPanel5.Location = new System.Drawing.Point(260, 4);
             this.TableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.TableLayoutPanel5.Name = "TableLayoutPanel5";
             this.TableLayoutPanel5.RowCount = 4;
@@ -707,7 +709,7 @@
             this.TableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.16588F));
             this.TableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.63981F));
             this.TableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.11374F));
-            this.TableLayoutPanel5.Size = new System.Drawing.Size(404, 234);
+            this.TableLayoutPanel5.Size = new System.Drawing.Size(376, 234);
             this.TableLayoutPanel5.TabIndex = 1;
             // 
             // Image_Label
@@ -716,10 +718,10 @@
             this.Image_Label.BackColor = System.Drawing.Color.White;
             this.Image_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Image_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Image_Label.Location = new System.Drawing.Point(236, 0);
+            this.Image_Label.Location = new System.Drawing.Point(213, 0);
             this.Image_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Image_Label.Name = "Image_Label";
-            this.Image_Label.Size = new System.Drawing.Size(164, 125);
+            this.Image_Label.Size = new System.Drawing.Size(159, 125);
             this.Image_Label.TabIndex = 6;
             this.Image_Label.Text = "صورة الصنف";
             this.Image_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -729,10 +731,10 @@
             this.UseTypeID_Label.AutoSize = true;
             this.UseTypeID_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UseTypeID_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseTypeID_Label.Location = new System.Drawing.Point(236, 125);
+            this.UseTypeID_Label.Location = new System.Drawing.Point(213, 125);
             this.UseTypeID_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UseTypeID_Label.Name = "UseTypeID_Label";
-            this.UseTypeID_Label.Size = new System.Drawing.Size(164, 35);
+            this.UseTypeID_Label.Size = new System.Drawing.Size(159, 35);
             this.UseTypeID_Label.TabIndex = 7;
             this.UseTypeID_Label.Text = "طريقة الاستخدام";
             this.UseTypeID_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -742,10 +744,10 @@
             this.ItemTypeID__Label.AutoSize = true;
             this.ItemTypeID__Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ItemTypeID__Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemTypeID__Label.Location = new System.Drawing.Point(236, 160);
+            this.ItemTypeID__Label.Location = new System.Drawing.Point(213, 160);
             this.ItemTypeID__Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ItemTypeID__Label.Name = "ItemTypeID__Label";
-            this.ItemTypeID__Label.Size = new System.Drawing.Size(164, 36);
+            this.ItemTypeID__Label.Size = new System.Drawing.Size(159, 36);
             this.ItemTypeID__Label.TabIndex = 8;
             this.ItemTypeID__Label.Text = "نوع الصنف";
             this.ItemTypeID__Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -758,7 +760,7 @@
             this.Image_PictureBox.Location = new System.Drawing.Point(4, 4);
             this.Image_PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.Image_PictureBox.Name = "Image_PictureBox";
-            this.Image_PictureBox.Size = new System.Drawing.Size(224, 117);
+            this.Image_PictureBox.Size = new System.Drawing.Size(201, 117);
             this.Image_PictureBox.TabIndex = 15;
             this.Image_PictureBox.TabStop = false;
             // 
@@ -770,7 +772,7 @@
             this.UseTypeID_ComboBox.Location = new System.Drawing.Point(4, 129);
             this.UseTypeID_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.UseTypeID_ComboBox.Name = "UseTypeID_ComboBox";
-            this.UseTypeID_ComboBox.Size = new System.Drawing.Size(224, 32);
+            this.UseTypeID_ComboBox.Size = new System.Drawing.Size(201, 32);
             this.UseTypeID_ComboBox.TabIndex = 17;
             // 
             // ItemTypeID_ComboBox
@@ -781,7 +783,7 @@
             this.ItemTypeID_ComboBox.Location = new System.Drawing.Point(4, 164);
             this.ItemTypeID_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ItemTypeID_ComboBox.Name = "ItemTypeID_ComboBox";
-            this.ItemTypeID_ComboBox.Size = new System.Drawing.Size(224, 32);
+            this.ItemTypeID_ComboBox.Size = new System.Drawing.Size(201, 32);
             this.ItemTypeID_ComboBox.TabIndex = 18;
             // 
             // TableLayoutPanel11
@@ -789,7 +791,7 @@
             this.TableLayoutPanel11.ColumnCount = 3;
             this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.56075F));
             this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.43925F));
-            this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.TableLayoutPanel11.Controls.Add(this.VAT_TextBox, 2, 0);
             this.TableLayoutPanel11.Controls.Add(this.NotUsed_CheckBox, 0, 0);
             this.TableLayoutPanel11.Controls.Add(this.NotUsed_Label, 1, 0);
@@ -799,17 +801,17 @@
             this.TableLayoutPanel11.Name = "TableLayoutPanel11";
             this.TableLayoutPanel11.RowCount = 1;
             this.TableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanel11.Size = new System.Drawing.Size(224, 30);
+            this.TableLayoutPanel11.Size = new System.Drawing.Size(201, 30);
             this.TableLayoutPanel11.TabIndex = 19;
             // 
             // VAT_TextBox
             // 
             this.VAT_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VAT_TextBox.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.VAT_TextBox.Location = new System.Drawing.Point(142, 4);
+            this.VAT_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.VAT_TextBox.Location = new System.Drawing.Point(137, 4);
             this.VAT_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.VAT_TextBox.Name = "VAT_TextBox";
-            this.VAT_TextBox.Size = new System.Drawing.Size(78, 28);
+            this.VAT_TextBox.Size = new System.Drawing.Size(60, 34);
             this.VAT_TextBox.TabIndex = 13;
             this.VAT_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -831,10 +833,10 @@
             this.NotUsed_Label.AutoSize = true;
             this.NotUsed_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NotUsed_Label.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotUsed_Label.Location = new System.Drawing.Point(32, 0);
+            this.NotUsed_Label.Location = new System.Drawing.Point(31, 0);
             this.NotUsed_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NotUsed_Label.Name = "NotUsed_Label";
-            this.NotUsed_Label.Size = new System.Drawing.Size(102, 30);
+            this.NotUsed_Label.Size = new System.Drawing.Size(98, 30);
             this.NotUsed_Label.TabIndex = 10;
             this.NotUsed_Label.Text = "غير مستخدم";
             this.NotUsed_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -844,10 +846,10 @@
             this.VAT_Label.AutoSize = true;
             this.VAT_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VAT_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VAT_Label.Location = new System.Drawing.Point(236, 196);
+            this.VAT_Label.Location = new System.Drawing.Point(213, 196);
             this.VAT_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VAT_Label.Name = "VAT_Label";
-            this.VAT_Label.Size = new System.Drawing.Size(164, 38);
+            this.VAT_Label.Size = new System.Drawing.Size(159, 38);
             this.VAT_Label.TabIndex = 9;
             this.VAT_Label.Text = "الضريبة";
             this.VAT_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -871,7 +873,7 @@
             this.TableLayoutPanel10.RowCount = 2;
             this.TableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanel10.Size = new System.Drawing.Size(267, 234);
+            this.TableLayoutPanel10.Size = new System.Drawing.Size(248, 234);
             this.TableLayoutPanel10.TabIndex = 2;
             // 
             // Undo_Button
@@ -881,10 +883,10 @@
             this.Undo_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Undo_Button.Enabled = false;
             this.Undo_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Undo_Button.Location = new System.Drawing.Point(184, 122);
+            this.Undo_Button.Location = new System.Drawing.Point(170, 122);
             this.Undo_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Undo_Button.Name = "Undo_Button";
-            this.Undo_Button.Size = new System.Drawing.Size(77, 107);
+            this.Undo_Button.Size = new System.Drawing.Size(72, 107);
             this.Undo_Button.TabIndex = 59;
             this.Undo_Button.Text = "تراجع";
             this.Undo_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -895,10 +897,10 @@
             this.Edit_Button.BackColor = System.Drawing.Color.White;
             this.Edit_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Edit_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Edit_Button.Location = new System.Drawing.Point(95, 5);
+            this.Edit_Button.Location = new System.Drawing.Point(88, 5);
             this.Edit_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Size = new System.Drawing.Size(77, 107);
+            this.Edit_Button.Size = new System.Drawing.Size(70, 107);
             this.Edit_Button.TabIndex = 58;
             this.Edit_Button.Text = "تعديل";
             this.Edit_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -908,16 +910,16 @@
             // 
             this.Save_Button.BackColor = System.Drawing.Color.White;
             this.Save_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Save_Button.Enabled = false;
             this.Save_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Save_Button.Location = new System.Drawing.Point(6, 5);
             this.Save_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Save_Button.Name = "Save_Button";
-            this.Save_Button.Size = new System.Drawing.Size(77, 107);
+            this.Save_Button.Size = new System.Drawing.Size(70, 107);
             this.Save_Button.TabIndex = 60;
             this.Save_Button.Text = "حفظ";
             this.Save_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Save_Button.UseVisualStyleBackColor = false;
+            this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
             // 
             // ItemsForm
             // 
@@ -925,7 +927,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TableLayoutPanel1);
             this.Name = "ItemsForm";
-            this.Size = new System.Drawing.Size(1168, 691);
+            this.Size = new System.Drawing.Size(1088, 691);
             this.TableLayoutPanel6.ResumeLayout(false);
             this.TableLayoutPanel6.PerformLayout();
             this.TableLayoutPanel9.ResumeLayout(false);

@@ -208,6 +208,8 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CurrentUserStore.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ThisPCDataModel.cs" />
     <Compile Include="Models\TranslationHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +219,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ConnectionManager.cs" />
+    <Compile Include="Repositories\RegistrationConnectionManager.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <EmbeddedResource Include="Forms\AccountsForm.resx">
       <DependentUpon>AccountsForm.cs</DependentUpon>

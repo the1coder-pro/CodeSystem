@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace CodeSystem
@@ -146,27 +147,434 @@ namespace CodeSystem
         private void LoginForm_Load(object sender, EventArgs e)
         {
             UserRepository repo = new UserRepository();
-            DataTable tblItem =  repo.GetTableData("tblItem1");
-            List<string> tblItemColumns = repo.GetColumns("tblItem1");
-
-            // list all columns
-            foreach (var column in tblItemColumns)
-            {
-                Console.WriteLine(column);
-            }
-
-            foreach (DataRow row in tblItem.Rows)
-            {
-                foreach (var column in tblItemColumns)
-                {
-                    Console.WriteLine(column);
-                    Console.WriteLine(row[column]);
-                }
+            List<string> tables = repo.GetTables();
+            DataTable tblItem =  repo.GetTableData("tblCategory"); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
             
-               
+            List<string> tblItemColumns = repo.GetColumns("tblCategory");
+            //foreach (var table in tables)
+            //{
+            //    Console.WriteLine(table);
+            //}
+
+
+            List<string> tableNames = new List<string>
+{
+    "tblAbsenceDay",
+    "tblAbsenceProcedureRule",
+    "tblAccount",
+    "tblAccountAccountType",
+    "tblAccountChildren",
+    "tblAccountChildrenHealthStatus",
+    "tblAccountContact",
+    "tblAccountCulturalSide",
+    "tblAccountDocument",
+    "tblAccountExperience",
+    "tblAccountHealthStatus",
+    "tblAccountItemUseType",
+    "tblAccountNote",
+    "tblAccountOldBalance",
+    "tblAccountRegistrationStatus",
+    "tblAccountSide",
+    "tblAccountStatus",
+    "tblAccountSupport",
+    "tblAccountSupport1",
+    "tblAccountType",
+    "tblApprovedCourse",
+    "tblAssayRequest",
+    "tblAssayRequestInvoice",
+    "tblAssayRequestProcedure",
+    "tblAttendanceCase",
+    "tblAuthority",
+    "tblAuthorityReportType",
+    "tblAuthorityReportTypeFillterationBy",
+    "tblAuthorizer",
+    "tblBackUpHistory",
+    "tblBasicDataTables",
+    "tblBillCopy",
+    "tblBillCopyGroup",
+    "tblBranch",
+    "tblBuildingType",
+    "tblCalendar",
+    "tblCalendarType",
+    "tblCarType",
+    "tblCategory",
+    "tblCity",
+    "tblClassDistributionTable",
+    "tblClassRoom",
+    "tblCode",
+    "tblCoding",
+    "tblCodingGroup",
+    "tblCodingGroupSubCodingGroup",
+    "tblCodingSupport",
+    "tblColor",
+    "tblCompanyDocument",
+    "tblConditionClass",
+    "tblConfirmationType",
+    "tblContactType",
+    "tblContract",
+    "tblContract1",
+    "tblContractInstalllment",
+    "tblContractInstalllmentMoneyTransaction",
+    "tblContractInvoice",
+    "tblContractReceipt",
+    "tblCopyFolder",
+    "tblCountry",
+    "tblCourse",
+    "tblCulturalSideType",
+    "tblCurrency",
+    "tblCustomerNoteOnCompany",
+    "tblCustomerSourceData",
+    "tblDailySchedule",
+    "tblDay",
+    "tblDisease",
+    "tblDividendOperation",
+    "tblDividendOperationInvestors",
+    "tblDividendOperationMenagment",
+    "tblDividendRatios",
+    "tblDocumentType",
+    "tblEducationLevel",
+    "tblEducationMajor",
+    "tblEmployeeAttendance",
+    "tblEmployeeContact",
+    "tblEmployeeDocument",
+    "tblEmployeeType",
+    "tblExamControl",
+    "tblExamDistributionTable",
+    "tblExamLateStudent",
+    "tblExamLateStudentList",
+    "tblExamObjection",
+    "tblExamPeriod",
+    "tblExamType",
+    "tblExecutionStatus",
+    "tblExperienceType",
+    "tblGender",
+    "tblGeneralGrade",
+    "tblGrade",
+    "tblGroupedCategory",
+    "tblHonorDegreeType",
+    "tblHospital",
+    "tblHouseType",
+    "tblHousingType",
+    "tblInputMeans",
+    "tblInstallment",
+    "tblInstallmentPlan",
+    "tblInstallmentPlanType",
+    "tblInsurancePersent",
+    "tblInvoice",
+    "tblInvoice1",
+    "tblInvoiceCancellation",
+    "tblInvoiceContact",
+    "tblInvoiceCopy",
+    "tblInvoiceDesignDetails",
+    "tblInvoiceItem",
+    "tblInvoiceItemAccount",
+    "tblInvoiceItemConsumables",
+    "tblInvoiceItemNote",
+    "tblInvoiceNoteType",
+    "tblInvoiceRealEstate",
+    "tblInvoiceRealestateUnit",
+    "tblInvoiceType",
+    "tblInvoiceTypeItemUseType",
+    "tblInvoiceTypeLink",
+    "tblInvoiceTypeObject",
+    "tblItem",
+    "tblItem1",
+    "tblItem2",
+    "tblItemBalance",
+    "tblItemBalance1",
+    "tblItemBalanceHistory",
+    "tblItemBlancePeriod",
+    "tblItemCarData",
+    "tblItemConsumables",
+    "tblItemGroup",
+    "tblItemOtherData",
+    "tblItemOtherData1",
+    "tblItemPlace",
+    "tblItemSize",
+    "tblItemType",
+    "tblJob",
+    "tblManagement",
+    "tblManagementLease",
+    "tblMark",
+    "tblMoneyAccountType",
+    "tblMoneyTransaction",
+    "tblMoneyTransactionDetail",
+    "tblMoneyTransactionDetails",
+    "tblMoneyTransactionInvoice",
+    "tblMoneyTransactionMethod",
+    "tblMonth",
+    "tblNationality",
+    "tblNoteOnCustomer",
+    "tblNoteOnEmployee",
+    "tblObject",
+    "tblObjectionType",
+    "tblObjectType",
+    "tblOrderExecution",
+    "tblOrderExecutionMember",
+    "tblOrderType",
+    "tblPaymentMethod",
+    "tblPaymentPeriodType",
+    "tblPaymentSubject",
+    "tblPC",
+    "tblPCSetting",
+    "tblPeriodType",
+    "tblPersonalCategory",
+    "tblPersonalData",
+    "tblPersonalGroupedCategory",
+    "tblPersonalStatus",
+    "tblPhoneDirectory",
+    "tblPhoneDirectoryContact",
+    "tblPictureData",
+    "tblPictureOccasion",
+    "tblPicturePerson",
+    "tblPicturePlace",
+    "tblPictureSource",
+    "tblPlace",
+    "tblPrintingFilter",
+    "tblProcedureType",
+    "tblProgramObject",
+    "tblProgramReportType",
+    "tblProgramSetting",
+    "tblProgramUseType",
+    "tblProgramUseTypeAccountType",
+    "tblProgramUseTypeBasicDataTable",
+    "tblProgramUseTypeCodingGroup",
+    "tblProgramUseTypeInvoiceType",
+    "tblProgramUseTypeReceiptSubject",
+    "tblQuarter",
+    "tblRealEstate",
+    "tblRealEstateUnit",
+    "tblRealEstateUnitAction",
+    "tblRealEstateUnitPrice",
+    "tblReceipt",
+    "tblReceipt1",
+    "tblReceiptCancellation",
+    "tblReceiptInstallment",
+    "tblReceiptInvoice",
+    "tblReceiptManagementLease",
+    "tblReceiptRentLease",
+    "tblReceiptSubject",
+    "tblReceiptType",
+    "tblReceiptTypeObject",
+    "tblReceivedOutsideSearchReport",
+    "tblReceivedOutsideSearchReportList",
+    "tblRegistrationStatus",
+    "tblReligion",
+    "tblRentLease",
+    "tblRentLease_Hotel",
+    "tblRentLease1",
+    "tblRentLeaseAttendant",
+    "tblRentLeaseCancellation",
+    "tblRentLeaseRenewal",
+    "tblRentLeaseRenewalCancellation",
+    "tblRentLeaseRenewalPaymentSubject",
+    "tblRentLeaseRenewalPeriodCancellation",
+    "tblRentLeaseRentGroupService",
+    "tblRentType",
+    "tblReportName",
+    "tblReportType",
+    "tblReportTypeGroup",
+    "tblReportTypeObject",
+    "tblRequiredUnit",
+    "tblRequiredUnitQuarter",
+    "tblReservation",
+    "tblReservationStatus",
+    "tblResthouse_RentedOut",
+    "tblResthouse_RentLease",
+    "tblResthouse_RentLeaseCancellation",
+    "tblRestHouse_RentLeaseRentGroup",
+    "tblRestHouse_SeasonRentGroup",
+    "tblRestHouse_SeasonRentGroupPeriod",
+    "tblRestHouse_SeasonService",
+    "tblRestHouse_Setting",
+    "tblRestHouse_UserGroupSetting",
+    "tblRestHouseRentPeriod",
+    "tblSeason",
+    "tblSeasonPeriod",
+    "tblSeasonsOfficialWorking",
+    "tblSection",
+    "tblShiftWorkPeriod",
+    "tblSickenStatuse",
+    "tblSMSMessageAccountDocument",
+    "tblSMSMessageCompanyDocument",
+    "tblSMSMessageHistory",
+    "tblSMSMessageInstallment",
+    "tblSMSMessageRecord",
+    "tblSMSMessageRentLeaseRenewal",
+    "tblSMSMessageRentLeaseRentGroup",
+    "tblSMSMessageSetting",
+    "tblSMSMessageType",
+    "tblSMSProvider",
+    "tblSpecialization",
+    "tblStage",
+    "tblStopType",
+    "tblStoredItemBalance",
+    "tblStoreMovement",
+    "tblStudentAttendance",
+    "tblStudentAttendanceList",
+    "tblStudentCourse",
+    "tblStudentCourseProcedure",
+    "tblStudentFinalValuation",
+    "tblStudentFinalValuationList",
+    "tblStudentFinanceRelatedData",
+    "tblStudentResult",
+    "tblStudentType",
+    "tblStudentWeeklyValuation",
+    "tblStudentWeeklyValuationList",
+    "tblStudyBook",
+    "tblStudyClass",
+    "tblStudyLevel",
+    "tblStudyTermPeriod",
+    "tblStudyType",
+    "tblStudyYear",
+    "tblTable",
+    "tblTeacherFinalValuation",
+    "tblTeacherFinalValuationList",
+    "tblTeacherProcedure",
+    "tblTeacherProcedureSubject",
+    "tblTeacherProcedureType",
+    "tblTeacherValuationByStudent",
+    "tblTeacherValuationByStudentList",
+    "tblTeacherValuationRecord",
+    "tblTeacherValuationRecordList",
+    "tblTeacherVisitNo",
+    "tblTeamGroup",
+    "tblTeamGroupMember",
+    "tblTerm",
+    "tblThisPCData",
+    "tblThisPCData1",
+    "tblTimeByHalfHour",
+    "tblTimeByQuarterHour",
+    "tblTimeHalf",
+    "tblTimeHour",
+    "tblTimeQuarter",
+    "tblTitle",
+    "tblTransactionHistory",
+    "tblTransactionType",
+    "tblUnitActionType",
+    "tblUnitExpense",
+    "tblUnitStatus",
+    "tblUnitType",
+    "tblUnitTypeCondition",
+    "tblUser",
+    "tblUserAccountType",
+    "tblUserGroup",  "tblUserGroupAccount",
+    "tblUserMoneyAccount",
+    "tblUserReceiptSubject",
+    "tblUserSetting",
+    "tblUserStatus",
+    "tblUseType",
+    "tblValuationForm",
+    "tblValuationFormGroup",
+    "tblValuationPersonType",
+    "tblVatType",
+    "tblVersion",
+    "tblWeek",
+    "tblWeekDay",
+    "tblWorkerRentContract",
+    "tblWorkerRentContractEmployee",
+    "tblYear",
+    "testNewName",
+    "tmbNotUsedMoneyTransaction",
+    "tmpAccountBalance",
+    "tmpInvoicePaidSum",
+    "tmpItemBalance",
+    "tmpItemCost",
+    "tmpItemTotal",
+    "tmpLastPaymentDate",
+    "tmpLastRentLeaseRenewal",
+    "tmpMoneyAccountBalance",
+    "tmpPurchaseInvoiceSummary",
+    "tmpSalesInvoiceSummary",
+    "USysRibbons",
+    "ValuationFormObject" };
+
+            //string databasePath = "\"C:\\Codes\\Codes101\\Report.accde\"";
+            //string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath};Persist Security Info=False;";
+
+            //// Define the update query
+            //string itemOtherDataQuery = @"UPDATE tblItemOtherData
+            //                          SET BarcodeNo = @BarcodeNo, 
+            //                              ColorID = @ColorID, 
+            //                              FilePath = @FilePath, 
+            //                              ItemGroupID = @ItemGroupID, 
+            //                              ItemNote = @ItemNote, 
+            //                              ItemPlaceID = @ItemPlaceID, 
+            //                              ItemSizeID = @ItemSizeID, 
+            //                              ItemTypeID = @ItemTypeID, 
+            //                              UnitCount = @UnitCount, 
+            //                              UseTypeID = @UseTypeID
+            //                          WHERE ItemID = @ItemID";
+
+            //// Define sample data for testing
+            //string BarcodeNo = "655";
+            //byte? ColorID = 1;
+            //string FilePath = @"C:\example\path\file.txt";
+            //int ItemGroupID = 19;
+            //int ID = 19; // ItemID
+            //string ItemNote = "This is a test note.";
+            //short? ItemPlaceID = null; // Nullable
+            //byte? ItemSizeID = 1; // Nullable
+            //short ItemTypeID = 1;
+            //float UnitCount = 5.5f;
+            //byte? UseTypeID = 1; // Nullable
+
+            //// Connect to the database and execute the query
+            //using (OleDbConnection connection = new OleDbConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        connection.Open();
+            //        using (OleDbCommand itemOtherDataCommand = new OleDbCommand(itemOtherDataQuery, connection))
+            //        {
+            //            // Add parameters with explicit data types
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@BarcodeNo", OleDbType.VarChar)).Value = BarcodeNo ?? (object)DBNull.Value;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ColorID", OleDbType.TinyInt)).Value = ColorID ?? (object)DBNull.Value;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@FilePath", OleDbType.VarChar)).Value = string.IsNullOrEmpty(FilePath) ? (object)DBNull.Value : FilePath;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemGroupID", OleDbType.Integer)).Value = ItemGroupID;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemNote", OleDbType.VarChar)).Value = string.IsNullOrEmpty(ItemNote) ? (object)DBNull.Value : ItemNote;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemPlaceID", OleDbType.SmallInt)).Value = ItemPlaceID ?? (object)DBNull.Value;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemSizeID", OleDbType.TinyInt)).Value = ItemSizeID ?? (object)DBNull.Value;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemTypeID", OleDbType.SmallInt)).Value = ItemTypeID;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@UnitCount", OleDbType.Single)).Value = UnitCount;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@UseTypeID", OleDbType.TinyInt)).Value = UseTypeID ?? (object)DBNull.Value;
+            //            itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemID", OleDbType.Integer)).Value = ID;
+
+            //            // Execute the query
+            //            int rowsAffected = itemOtherDataCommand.ExecuteNonQuery();
+            //            Console.WriteLine($"Query executed successfully. Rows affected: {rowsAffected}");
+            //        }
+            //    }
+            //    catch (OleDbException ex)
+            //    {
+            //        // Debugging: Output exception message and parameters
+            //        Console.WriteLine($"Error: {ex.Message}");
+            //    }
+            //}
+            // list all columns
+            foreach (var table in tableNames)
+            {
+                Console.WriteLine("======");
+                Console.WriteLine(table);
+                DataTable tableData = repo.GetTableData(table); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
+                List<string> tableDataColumns = repo.GetColumns(table);
+
+                foreach (DataRow row in tableData.Rows)
+                {
+                    Console.WriteLine("-------");
+                    foreach (var column in tableDataColumns)
+                    {
+                        Console.WriteLine(column);
+                        Console.WriteLine(row[column]);
+                    }
+
+
+                }
             }
 
-     
+
+
+
 
         }
     }

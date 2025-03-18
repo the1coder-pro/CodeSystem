@@ -225,25 +225,34 @@ WholesalePrice
                 
                 if (!row.IsNewRow)
                 {
-                    selectedItem = new Item(
-     id: Convert.ToInt32(row.Cells["ID"].Value),
-     itemGroupID: Convert.ToInt32(row.Cells["ItemGroupID"].Value),
-     costPrice: Convert.ToDecimal(row.Cells["CostPrice"].Value),  // Make sure this column is included!
-     lastPurchaseDate: Convert.ToDateTime(row.Cells["LastPurchaseDate"].Value),
-     lastPurchasePrice: Convert.ToDecimal(row.Cells["LastPurchasePrice"].Value),
-     maxPurchasePrice: Convert.ToDecimal(row.Cells["MaxPurchasePrice"].Value),
-     minimumPrice: Convert.ToDecimal(row.Cells["MinimumPrice"].Value),
-     minPurchasePrice: Convert.ToDecimal(row.Cells["MinPurchasePrice"].Value),
-     nameAr: row.Cells["NameAr"].Value.ToString(),
-     nameEn: row.Cells["NameEn"].Value.ToString(),
-     notUsed: Convert.ToBoolean(row.Cells["NotUsed"].Value),
-     price: Convert.ToDecimal(row.Cells["Price"].Value),  // Make sure this column is included!
-     qty: Convert.ToInt32(row.Cells["Qty"].Value),
-     quickItem: Convert.ToBoolean(row.Cells["quickitem"].Value),
-     shortName: row.Cells["ShortName"].Value.ToString(),
-     vat: Convert.ToDecimal(row.Cells["VAT"].Value),
-     wholesalePrice: Convert.ToDecimal(row.Cells["WholesalePrice"].Value)  // Ensure this column exists!
- );
+ //                   selectedItem = new Item(
+ //    id: Convert.ToInt32(row.Cells["ID"].Value),
+ //    itemGroupID: Convert.ToInt32(row.Cells["ItemGroupID"].Value),
+ //    costPrice: Convert.ToDecimal(row.Cells["CostPrice"].Value),  // Make sure this column is included!
+ //    lastPurchaseDate: Convert.ToDateTime(row.Cells["LastPurchaseDate"].Value),
+ //    lastPurchasePrice: Convert.ToDecimal(row.Cells["LastPurchasePrice"].Value),
+ //    maxPurchasePrice: Convert.ToDecimal(row.Cells["MaxPurchasePrice"].Value),
+ //    minimumPrice: Convert.ToDecimal(row.Cells["MinimumPrice"].Value),
+ //    minPurchasePrice: Convert.ToDecimal(row.Cells["MinPurchasePrice"].Value),
+ //    nameAr: row.Cells["NameAr"].Value.ToString(),
+ //    nameEn: row.Cells["NameEn"].Value.ToString(),
+ //    notUsed: Convert.ToBoolean(row.Cells["NotUsed"].Value),
+ //    price: Convert.ToDecimal(row.Cells["Price"].Value),  // Make sure this column is included!
+ //    qty: Convert.ToInt32(row.Cells["Qty"].Value),
+ //    quickItem: Convert.ToBoolean(row.Cells["quickitem"].Value),
+ //    itemTypeID: Convert.ToInt32(row.Cells["ItemTypeId"].Value),
+ //    useTypeID: Convert.ToInt32(row.Cells["UseTypeID"].Value),
+ //    itemNote: row.Cells["ItemNote"].Value.ToString(),
+ //    barcodeNo: "0303",
+ //    colorID: Convert.ToInt32(row.Cells["ColorID"].Value),
+ //    filePath: row.Cells["FilePath"].Value.ToString(),
+ //    itemPlaceID: Convert.ToInt32(row.Cells["ItemPlaceID"].Value),
+ //    itemSizeID: Convert.ToInt32(row.Cells["ItemSizeID"].Value),
+ //    unitCount: Convert.ToInt32(row.Cells["UnitCount"].Value),
+ //    shortName: row.Cells["ShortName"].Value.ToString(),
+ //    vat: Convert.ToDecimal(row.Cells["VAT"].Value),
+ //    wholesalePrice: Convert.ToDecimal(row.Cells["WholesalePrice"].Value)  // Ensure this column exists!
+ //);
 
 
                 }
@@ -262,25 +271,34 @@ WholesalePrice
 
             // get the last item data into item object
             DataGridViewRow row = this.ItemList_DataGridView.Rows[ItemList_DataGridView.Rows.Count - 2];
-            selectedItem = new Item(
-   id: Convert.ToInt32(row.Cells["ID"].Value),
-   itemGroupID: Convert.ToInt32(row.Cells["ItemGroupID"].Value),
-   costPrice: Convert.ToDecimal(row.Cells["CostPrice"].Value),  // Make sure this column is included!
-   lastPurchaseDate: Convert.ToDateTime(row.Cells["LastPurchaseDate"].Value),
-   lastPurchasePrice: Convert.ToDecimal(row.Cells["LastPurchasePrice"].Value),
-   maxPurchasePrice: Convert.ToDecimal(row.Cells["MaxPurchasePrice"].Value),
-   minimumPrice: Convert.ToDecimal(row.Cells["MinimumPrice"].Value),
-   minPurchasePrice: Convert.ToDecimal(row.Cells["MinPurchasePrice"].Value),
-   nameAr: row.Cells["NameAr"].Value.ToString(),
-   nameEn: row.Cells["NameEn"].Value.ToString(),
-   notUsed: Convert.ToBoolean(row.Cells["NotUsed"].Value),
-   price: Convert.ToDecimal(row.Cells["Price"].Value),  // Make sure this column is included!
-   qty: Convert.ToInt32(row.Cells["Qty"].Value),
-   quickItem: Convert.ToBoolean(row.Cells["quickitem"].Value),
-   shortName: row.Cells["ShortName"].Value.ToString(),
-   vat: Convert.ToDecimal(row.Cells["VAT"].Value),
-   wholesalePrice: Convert.ToDecimal(row.Cells["WholesalePrice"].Value)  // Ensure this column exists!
-);
+  //          selectedItem = new Item(
+  //    id: Convert.ToInt32(row.Cells["ID"].Value),
+  //    itemGroupID: Convert.ToInt32(row.Cells["ItemGroupID"].Value),
+  //    costPrice: Convert.ToDecimal(row.Cells["CostPrice"].Value),  // Make sure this column is included!
+  //    lastPurchaseDate: Convert.ToDateTime(row.Cells["LastPurchaseDate"].Value),
+  //    lastPurchasePrice: Convert.ToDecimal(row.Cells["LastPurchasePrice"].Value),
+  //    maxPurchasePrice: Convert.ToDecimal(row.Cells["MaxPurchasePrice"].Value),
+  //    minimumPrice: Convert.ToDecimal(row.Cells["MinimumPrice"].Value),
+  //    minPurchasePrice: Convert.ToDecimal(row.Cells["MinPurchasePrice"].Value),
+  //    nameAr: row.Cells["NameAr"].Value.ToString(),
+  //    nameEn: row.Cells["NameEn"].Value.ToString(),
+  //    notUsed: Convert.ToBoolean(row.Cells["NotUsed"].Value),
+  //    price: Convert.ToDecimal(row.Cells["Price"].Value),  // Make sure this column is included!
+  //    qty: Convert.ToInt32(row.Cells["Qty"].Value),
+  //    quickItem: Convert.ToBoolean(row.Cells["quickitem"].Value),
+  //    itemTypeID: Convert.ToInt32(row.Cells["ItemTypeId"].Value),
+  //    useTypeID: Convert.ToInt32(row.Cells["UseTypeID"].Value),
+  //    itemNote: row.Cells["ItemNote"].Value.ToString(),
+  //    barcodeNo: "0303",
+  //    colorID: Convert.ToInt32(row.Cells["ColorID"].Value),
+  //    filePath: row.Cells["FilePath"].Value.ToString(),
+  //    itemPlaceID: Convert.ToInt32(row.Cells["ItemPlaceID"].Value),
+  //    itemSizeID: Convert.ToInt32(row.Cells["ItemSizeID"].Value),
+  //    unitCount: Convert.ToInt32(row.Cells["UnitCount"].Value),
+  //    shortName: row.Cells["ShortName"].Value.ToString(),
+  //    vat: Convert.ToDecimal(row.Cells["VAT"].Value),
+  //    wholesalePrice: Convert.ToDecimal(row.Cells["WholesalePrice"].Value)  // Ensure this column exists!
+  //);
 
             // save the data to the database
             selectedItem.Insert("\"C:\\Codes\\Codes101\\Report.accde\"");

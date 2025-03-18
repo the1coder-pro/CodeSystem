@@ -239,7 +239,7 @@ namespace CodeSystem
 
         private void itemsBtn_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new ItemsForm());
+            showFormInPanel(new InventoryForm());
         }
 
         private void الأصنافToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -265,6 +265,12 @@ namespace CodeSystem
             // Refresh the flowLayoutPanel to reflect the updated language
             RefreshFlowLayoutPanel();
             InitializeLanguage();
+        }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showFormInPanel(new AccountsForm());
+
         }
     }
     

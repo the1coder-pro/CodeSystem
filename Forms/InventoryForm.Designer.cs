@@ -86,13 +86,13 @@
             this.button8 = new System.Windows.Forms.Button();
             this.unitTypeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lastPurchasePriceTextBox = new System.Windows.Forms.TextBox();
-            this.minPurchasePriceTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maxPurchasePriceTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lastPurchasePriceTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.minPurchasePriceTextBox = new System.Windows.Forms.TextBox();
             this.lastPurchaseDateTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -162,7 +162,7 @@
             // 
             // itemNotesTextBox
             // 
-            this.itemNotesTextBox.Location = new System.Drawing.Point(661, 429);
+            this.itemNotesTextBox.Location = new System.Drawing.Point(688, 429);
             this.itemNotesTextBox.Multiline = true;
             this.itemNotesTextBox.Name = "itemNotesTextBox";
             this.itemNotesTextBox.Size = new System.Drawing.Size(338, 131);
@@ -639,50 +639,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(138, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 23);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "LastPurchasePrice";
-            // 
-            // lastPurchasePriceTextBox
-            // 
-            this.lastPurchasePriceTextBox.Location = new System.Drawing.Point(50, 127);
-            this.lastPurchasePriceTextBox.Name = "lastPurchasePriceTextBox";
-            this.lastPurchasePriceTextBox.Size = new System.Drawing.Size(234, 24);
-            this.lastPurchasePriceTextBox.TabIndex = 98;
-            // 
-            // minPurchasePriceTextBox
-            // 
-            this.minPurchasePriceTextBox.Location = new System.Drawing.Point(50, 244);
-            this.minPurchasePriceTextBox.Name = "minPurchasePriceTextBox";
-            this.minPurchasePriceTextBox.Size = new System.Drawing.Size(234, 24);
-            this.minPurchasePriceTextBox.TabIndex = 96;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 23);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "MinPurchasePrice";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(139, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 23);
-            this.label4.TabIndex = 93;
-            this.label4.Text = "LastPurchaseDate";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -699,6 +655,50 @@
             this.maxPurchasePriceTextBox.Name = "maxPurchasePriceTextBox";
             this.maxPurchasePriceTextBox.Size = new System.Drawing.Size(234, 24);
             this.maxPurchasePriceTextBox.TabIndex = 100;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(138, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 23);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "LastPurchasePrice";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(139, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 23);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "MinPurchasePrice";
+            // 
+            // lastPurchasePriceTextBox
+            // 
+            this.lastPurchasePriceTextBox.Location = new System.Drawing.Point(50, 127);
+            this.lastPurchasePriceTextBox.Name = "lastPurchasePriceTextBox";
+            this.lastPurchasePriceTextBox.Size = new System.Drawing.Size(234, 24);
+            this.lastPurchasePriceTextBox.TabIndex = 98;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(139, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 23);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "LastPurchaseDate";
+            // 
+            // minPurchasePriceTextBox
+            // 
+            this.minPurchasePriceTextBox.Location = new System.Drawing.Point(50, 244);
+            this.minPurchasePriceTextBox.Name = "minPurchasePriceTextBox";
+            this.minPurchasePriceTextBox.Size = new System.Drawing.Size(234, 24);
+            this.minPurchasePriceTextBox.TabIndex = 96;
             // 
             // lastPurchaseDateTextBox
             // 

@@ -148,9 +148,9 @@ namespace CodeSystem
         {
             UserRepository repo = new UserRepository();
             List<string> tables = repo.GetTables();
-            DataTable tblItem =  repo.GetTableData("tblCategory"); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
+            DataTable tblItemOtherData =  repo.GetTableData("tblItemOtherData"); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
             
-            List<string> tblItemColumns = repo.GetColumns("tblCategory");
+            List<string> tblItemOtherDataColumns = repo.GetColumns("tblItemOtherData");
             //foreach (var table in tables)
             //{
             //    Console.WriteLine(table);
@@ -489,6 +489,13 @@ namespace CodeSystem
     "USysRibbons",
     "ValuationFormObject" };
 
+            foreach (var column in tblItemOtherDataColumns)
+            {
+                Console.WriteLine(column);
+            }
+
+
+
             //string databasePath = "\"C:\\Codes\\Codes101\\Report.accde\"";
             //string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath};Persist Security Info=False;";
 
@@ -551,31 +558,31 @@ namespace CodeSystem
             //        Console.WriteLine($"Error: {ex.Message}");
             //    }
             //}
-            // list all columns
+            //list all columns
             foreach (var table in tableNames)
             {
                 Console.WriteLine("======");
                 Console.WriteLine(table);
                 DataTable tableData = repo.GetTableData(table); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
                 List<string> tableDataColumns = repo.GetColumns(table);
-
-                foreach (DataRow row in tableData.Rows)
+            foreach (DataRow row in tableData.Rows)
+            {
+                Console.WriteLine("-------");
+                foreach (var column in tableDataColumns)
                 {
-                    Console.WriteLine("-------");
-                    foreach (var column in tableDataColumns)
-                    {
-                        Console.WriteLine(column);
-                        Console.WriteLine(row[column]);
-                    }
-
-
+                    Console.WriteLine(column);
+                    Console.WriteLine(row[column]);
                 }
+
+
             }
 
-
-
-
-
         }
+
+
+
+
+
+    }
     }
 }

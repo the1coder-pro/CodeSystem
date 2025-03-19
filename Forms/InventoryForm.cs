@@ -19,6 +19,40 @@ namespace CodeSystem.Forms
             InitializeComponent();
         }
 
+        private void fillFormDemoData()
+        {
+            // Fill the form with demo data for testing purposes 
+            // get random number 
+            Random random = new Random();
+            int randomNumber = random.Next(1000, 9999);
+            itemIDTextBox.Text = randomNumber.ToString();
+            groupIDTextBox.Text = randomNumber.ToString();
+            priceWithVATTextBox.Text = (randomNumber * (randomNumber / 100)).ToString();
+            lastPurchaseDateTextBox.Text = DateTime.Now.ToString();
+            lastPurchasePriceTextBox.Text = randomNumber.ToString();
+            maxPurchasePriceTextBox.Text = randomNumber.ToString();
+            minimumPriceTextBox.Text = randomNumber.ToString();
+            minPurchasePriceTextBox.Text = randomNumber.ToString();
+            nameArabicTextBox.Text = " اسم العنصر " + randomNumber;
+            nameEnglishTextBox.Text = " Item Name " + randomNumber;
+            notUsedCheckBox.Checked = true;
+            priceWithoutVATTextBox.Text = randomNumber.ToString();
+            quantityTextBox.Text = randomNumber.ToString();
+            quickItemCheckBox.Checked = true;
+            nameShortTextBox.Text = " Short Name " + randomNumber;
+            VATPercentageTextBox.Text =  (randomNumber/ 100).ToString();
+            wholesalePriceTextBox.Text = randomNumber.ToString();
+            itemTypeComboBox.SelectedIndex = 0;
+            useTypeComboBox.SelectedIndex = 0;
+            itemNotesTextBox.Text = "Item Notes";
+            barcodeNumberTextBox.Text = randomNumber.ToString();
+            itemColorComboBox.SelectedIndex = 0;
+            //itemPlaceComboBox.SelectedIndex = 0;
+
+            
+
+        }
+
         private void fillComboBoxes()
         {
             string languageToView = CurrentUser.Instance.language == "ar" ? "NameAr" : "NameEn";
@@ -58,6 +92,8 @@ namespace CodeSystem.Forms
         private void InventoryForm_Load(object sender, EventArgs e)
         {
             fillComboBoxes();
+            fillFormDemoData();
+            
 
         }
 

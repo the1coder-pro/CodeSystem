@@ -96,21 +96,8 @@ namespace CodeSystem
                                  @MaxPurchasePrice, @MinimumPrice, @MinPurchasePrice, @NameAr, @NameEn, @NotUsed, @Price, 
                                  @Qty, @QuickItem, @ShortName, @VAT, @WholesalePrice)";
 
-            string itemGroupQuery = @"INSERT INTO tblItemGroup (ID, ItemTypeID, NameAr, NameEn, NotUsed, ShortName, UseTypeID, VAT) 
-                                      VALUES (@ItemGroupID, @ItemTypeID, @NameAr, @NameEn, @NotUsed, @ShortName, @UseTypeID, @VAT)";
-
-            //string itemOtherDataQuery = @"UPDATE tblItemOtherData
-            //                  SET BarcodeNo = @BarcodeNo, 
-            //                      ColorID = @ColorID, 
-            //                      FilePath = @FilePath, 
-            //                      ItemGroupID = @ItemGroupID, 
-            //                      ItemNote = @ItemNote, 
-            //                      ItemPlaceID = @ItemPlaceID, 
-            //                      ItemSizeID = @ItemSizeID, 
-            //                      ItemTypeID = @ItemTypeID, 
-            //                      UnitCount = @UnitCount, 
-            //                      UseTypeID = @UseTypeID
-            //                  WHERE ItemID = @ItemID";
+            string itemGroupQuery = @"INSERT INTO tblItemGroup (ID, ItemTypeID, NameAr, NameEn, NotUsed, ShortName, VAT, FilePath, ItemNote, UseTypeID) 
+                                      VALUES (@ItemGroupID, @ItemTypeID, @NameAr, @NameEn, @NotUsed, @ShortName, @VAT , @FilePath, @ItemNote, @UseTypeID)";
 
             string itemOtherDataQuery = @"UPDATE tblItemOtherData
                                       SET BarcodeNo = @BarcodeNo, 
@@ -137,14 +124,16 @@ namespace CodeSystem
                     // Insert into tblItemGroup
                     using (OleDbCommand itemGroupCommand = new OleDbCommand(itemGroupQuery, connection))
                     {
-                        itemGroupCommand.Parameters.AddWithValue("@ID", ItemGroupID);
+                        itemGroupCommand.Parameters.AddWithValue("@ID", ID);
                         itemGroupCommand.Parameters.AddWithValue("@ItemTypeID", ItemTypeID);
                         itemGroupCommand.Parameters.AddWithValue("@NameAr", NameAr);
                         itemGroupCommand.Parameters.AddWithValue("@NameEn", NameEn);
                         itemGroupCommand.Parameters.AddWithValue("@NotUsed", NotUsed);
                         itemGroupCommand.Parameters.AddWithValue("@ShortName", ShortName);
-                        itemGroupCommand.Parameters.AddWithValue("@UseTypeID", UseTypeID);
                         itemGroupCommand.Parameters.AddWithValue("@VAT", VAT);
+                        itemGroupCommand.Parameters.Add(new OleDbParameter("@FilePath", OleDbType.VarChar)).Value = string.IsNullOrEmpty(FilePath) ? (object)DBNull.Value : FilePath;
+                        itemGroupCommand.Parameters.Add(new OleDbParameter("@ItemNote", OleDbType.VarChar)).Value = string.IsNullOrEmpty(ItemNote) ? (object)DBNull.Value : ItemNote;
+                        itemGroupCommand.Parameters.Add(new OleDbParameter("@UseTypeID", OleDbType.TinyInt)).Value = UseTypeID;
 
                         itemGroupCommand.ExecuteNonQuery();
                     }
@@ -152,9 +141,9 @@ namespace CodeSystem
                     // Insert into tblItem1
                     using (OleDbCommand itemCommand = new OleDbCommand(itemQuery, connection))
                     {
-                        itemCommand.Parameters.AddWithValue("@CostPrice", CostPrice);
+                        itemCommand.Parameters.AddWithValue("@CostPrice", Price * VAT);
                         itemCommand.Parameters.AddWithValue("@ID", ID);
-                        itemCommand.Parameters.AddWithValue("@ItemGroupID", ItemGroupID);
+                        itemCommand.Parameters.AddWithValue("@ItemGroupID", ID);
                         itemCommand.Parameters.AddWithValue("@LastPurchaseDate", LastPurchaseDate);
                         itemCommand.Parameters.AddWithValue("@LastPurchasePrice", LastPurchasePrice);
                         itemCommand.Parameters.AddWithValue("@MaxPurchasePrice", MaxPurchasePrice);
@@ -179,29 +168,54 @@ namespace CodeSystem
                     {
 
                         //// Define sample data for testing
-                        //string BarcodeNo = "655";
-                        //byte? ColorID = 1;
-                        //string FilePath = @"C:\example\path\file.txt";
-                        //int ItemGroupID = 19;
-                        //int ID = 19; // ItemID
-                        //string ItemNote = "This is a test note.";
-                        //short? ItemPlaceID = null; // Nullable
-                        //byte? ItemSizeID = 1; // Nullable
-                        //short ItemTypeID = 1;
-                        //float UnitCount = 5.5f;
-                        //byte? UseTypeID = 1; // Nullable
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@BarcodeNo", OleDbType.VarChar)).Value = BarcodeNo ?? (object)DBNull.Value;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ColorID", OleDbType.TinyInt)).Value = ColorID ?? (object)DBNull.Value;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@FilePath", OleDbType.VarChar)).Value = string.IsNullOrEmpty(FilePath) ? (object)DBNull.Value : FilePath;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemGroupID", OleDbType.Integer)).Value = ItemGroupID;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemNote", OleDbType.VarChar)).Value = string.IsNullOrEmpty(ItemNote) ? (object)DBNull.Value : ItemNote;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemPlaceID", OleDbType.SmallInt)).Value = ItemPlaceID ?? (object)DBNull.Value;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemSizeID", OleDbType.TinyInt)).Value = ItemSizeID ?? (object)DBNull.Value;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemTypeID", OleDbType.SmallInt)).Value = ItemTypeID;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@UnitCount", OleDbType.Single)).Value = float.Parse(UnitCount.ToString());
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@UseTypeID", OleDbType.TinyInt)).Value = UseTypeID;
-                        itemOtherDataCommand.Parameters.Add(new OleDbParameter("@ItemID", OleDbType.Integer)).Value = ID;
+                        string BarcodeNo3 = "655";
+                        byte? ColorID3 = 1;
+                        string FilePath3 = @"C:\example\path\file.txt";
+                        string ItemNote3 = "This is a test note.";
+                        short? ItemPlaceID3 = 1; // Nullable
+                        byte? ItemSizeID3 = 1; // Nullable
+                        short ItemTypeID3 = 1;
+                        float UnitCount3 = 5.5f;
+                        byte? UseTypeID3 = 1; // Nullable
 
+                        itemOtherDataCommand.Parameters.AddWithValue("@BarcodeNo", BarcodeNo);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ColorID", ColorID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@FilePath", FilePath3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemGroupID", ID);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemID", ID);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemNote", ItemNote);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemPlaceID", ItemPlaceID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemSizeID", ItemSizeID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemTypeID", ItemTypeID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@UnitCount", UnitCount3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@UseTypeID", UseTypeID3);
+
+                        // print the values with the variable name
+                        /*
+                        
+                        BarcodeNo
+                        ColorID
+                        FilePath
+                        ItemGroupID
+                        ItemID
+                        ItemNote
+                        ItemPlaceID
+                        ItemSizeID
+                        ItemTypeID
+                        UnitCount
+                        UseTypeID
+                         */
+                        Console.WriteLine("BarcodeNo: " + BarcodeNo3);
+                        Console.WriteLine("ColorID: " + ColorID3);
+                        Console.WriteLine("FilePath: " + FilePath3);
+                        Console.WriteLine("ItemGroupID: " + ItemGroupID);
+                        Console.WriteLine("ItemID: " + ID);
+                        Console.WriteLine("ItemNote: " + ItemNote3);
+                        Console.WriteLine("ItemPlaceID: " + ItemPlaceID3);
+                        Console.WriteLine("ItemSizeID: " + ItemSizeID3);
+                        Console.WriteLine("ItemTypeID: " + ItemTypeID3);
+                        Console.WriteLine("UnitCount: " + UnitCount3);
+                        Console.WriteLine("UseTypeID: " + UseTypeID3);
 
 
 

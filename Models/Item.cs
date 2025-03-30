@@ -96,6 +96,15 @@ namespace CodeSystem
                                  @MaxPurchasePrice, @MinimumPrice, @MinPurchasePrice, @NameAr, @NameEn, @NotUsed, @Price, 
                                  @Qty, @QuickItem, @ShortName, @VAT, @WholesalePrice)";
 
+            string itemQueryTblItem = @"UPDATE tblItem SET ItemGroupID = @ItemGroupID,
+                                                           MinimumPrice = @MinimumPrice,
+                                                           Price = @Price,
+                                                           QuickItem = @QuickItem,
+                                                           WithVatPrice = @WithVatPrice,
+                                                           WholesalePrice = @WholesalePrice
+Where ID = @ID";
+
+
             string itemGroupQuery = @"INSERT INTO tblItemGroup (ID, ItemTypeID, NameAr, NameEn, NotUsed, ShortName, VAT, FilePath, ItemNote, UseTypeID) 
                                       VALUES (@ItemGroupID, @ItemTypeID, @NameAr, @NameEn, @NotUsed, @ShortName, @VAT , @FilePath, @ItemNote, @UseTypeID)";
 
@@ -110,6 +119,13 @@ namespace CodeSystem
                                           ItemTypeID = @ItemTypeID, 
                                           UnitCount = @UnitCount, 
                                           UseTypeID = @UseTypeID
+                                      WHERE ItemID = @ItemID";
+
+            string itemOtherData1Query = @"UPDATE tblItemOtherData1
+                                      SET BarcodeNo = @BarcodeNo, 
+                                          ColorID = @ColorID, 
+                                          ItemSizeID = @ItemSizeID, 
+                                          UnitCount = @UnitCount
                                       WHERE ItemID = @ItemID";
 
 
@@ -143,7 +159,7 @@ namespace CodeSystem
                     {
                         itemCommand.Parameters.AddWithValue("@CostPrice", Price * VAT);
                         itemCommand.Parameters.AddWithValue("@ID", ID);
-                        itemCommand.Parameters.AddWithValue("@ItemGroupID", ID);
+                        itemCommand.Parameters.AddWithValue("@ItemGroupID", ItemGroupID);
                         itemCommand.Parameters.AddWithValue("@LastPurchaseDate", LastPurchaseDate);
                         itemCommand.Parameters.AddWithValue("@LastPurchasePrice", LastPurchasePrice);
                         itemCommand.Parameters.AddWithValue("@MaxPurchasePrice", MaxPurchasePrice);
@@ -162,6 +178,19 @@ namespace CodeSystem
                         itemCommand.ExecuteNonQuery();
                     }
 
+                    using (OleDbCommand itemCommand = new OleDbCommand(itemQueryTblItem, connection))
+                    {
+                        itemCommand.Parameters.AddWithValue("@ID", ID);
+                        itemCommand.Parameters.AddWithValue("@ItemGroupID", ItemGroupID);
+                        itemCommand.Parameters.AddWithValue("@MinimumPrice", MinimumPrice);
+                        itemCommand.Parameters.AddWithValue("@Price", Price);
+                        itemCommand.Parameters.AddWithValue("@QuickItem", QuickItem);
+                        itemCommand.Parameters.AddWithValue("@WithVatPrice", Price * VAT);
+                        itemCommand.Parameters.AddWithValue("@WholesalePrice", WholesalePrice);
+
+                        itemCommand.ExecuteNonQuery();
+                    }
+
                     // TODO: IT should be tblItemGroup not tblItemOtherData. move all the columns from here to the tblItemGroup.
                     // Insert into tblItemOtherData
                     using (OleDbCommand itemOtherDataCommand = new OleDbCommand(itemOtherDataQuery, connection))
@@ -175,7 +204,7 @@ namespace CodeSystem
                         short? ItemPlaceID3 = 1; // Nullable
                         byte? ItemSizeID3 = 1; // Nullable
                         short ItemTypeID3 = 1;
-                        float UnitCount3 = 5.5f;
+                        float UnitCount3 = 5f;
                         byte? UseTypeID3 = 1; // Nullable
 
                         itemOtherDataCommand.Parameters.AddWithValue("@BarcodeNo", BarcodeNo);
@@ -222,6 +251,55 @@ namespace CodeSystem
                         itemOtherDataCommand.ExecuteNonQuery();
                     }
 
+                    using (OleDbCommand itemOtherDataCommand = new OleDbCommand(itemOtherData1Query, connection))
+                    {
+
+                        //// Define sample data for testing
+                        string BarcodeNo3 = "655";
+                        byte? ColorID3 = 1;
+                        string FilePath3 = @"C:\example\path\file.txt";
+                        string ItemNote3 = "This is a test note.";
+                        byte? ItemSizeID3 = 1; // Nullable
+                        short ItemTypeID3 = 1;
+                        float UnitCount3 = 5f;
+                        byte? UseTypeID3 = 1; // Nullable
+
+                        itemOtherDataCommand.Parameters.AddWithValue("@BarcodeNo", BarcodeNo);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ColorID", ColorID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemID", ID);
+                        itemOtherDataCommand.Parameters.AddWithValue("@ItemSizeID", ItemSizeID3);
+                        itemOtherDataCommand.Parameters.AddWithValue("@UnitCount", UnitCount3);
+
+                        // print the values with the variable name
+                        /*
+                        
+                        BarcodeNo
+                        ColorID
+                        FilePath
+                        ItemGroupID
+                        ItemID
+                        ItemNote
+                        ItemPlaceID
+                        ItemSizeID
+                        ItemTypeID
+                        UnitCount
+                        UseTypeID
+                         */
+                        Console.WriteLine("BarcodeNo: " + BarcodeNo3);
+                        Console.WriteLine("ColorID: " + ColorID3);
+                        Console.WriteLine("FilePath: " + FilePath3);
+                        Console.WriteLine("ItemGroupID: " + ItemGroupID);
+                        Console.WriteLine("ItemID: " + ID);
+                        Console.WriteLine("ItemNote: " + ItemNote3);
+                        Console.WriteLine("ItemSizeID: " + ItemSizeID3);
+                        Console.WriteLine("ItemTypeID: " + ItemTypeID3);
+                        Console.WriteLine("UnitCount: " + UnitCount3);
+                        Console.WriteLine("UseTypeID: " + UseTypeID3);
+
+
+
+                        itemOtherDataCommand.ExecuteNonQuery();
+                    }
                 }
                 return true;
             }

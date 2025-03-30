@@ -186,5 +186,10 @@ namespace CodeSystem.Forms
                 MessageBox.Show("Failed to add item to the inventory.");
             }
         }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -239,7 +239,7 @@ namespace CodeSystem
 
         private void itemsBtn_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new InventoryForm());
+            showFormInPanel(new InventoryItemsForm());
         }
 
         private void الأصنافToolStripMenuItem1_Click(object sender, EventArgs e)

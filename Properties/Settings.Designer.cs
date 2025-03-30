@@ -33,5 +33,15 @@ namespace CodeSystem.Properties {
                 return ((string)(this["codesystemdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Report.accdb")]
+        public string ReportConnectionString {
+            get {
+                return ((string)(this["ReportConnectionString"]));
+            }
+        }
     }
 }

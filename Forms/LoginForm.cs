@@ -489,10 +489,10 @@ namespace CodeSystem
     "USysRibbons",
     "ValuationFormObject" };
 
-            foreach (var column in tblItemOtherDataColumns)
-            {
-                Console.WriteLine(column);
-            }
+            //foreach (var column in tblItemOtherDataColumns)
+            //{
+            //    Console.WriteLine(column);
+            //}
 
 
 
@@ -559,30 +559,30 @@ namespace CodeSystem
             //    }
             //}
             //list all columns
-            foreach (var table in tableNames)
-            {
-                Console.WriteLine("======");
-                Console.WriteLine(table);
-                DataTable tableData = repo.GetTableData(table); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
-                List<string> tableDataColumns = repo.GetColumns(table);
-            foreach (DataRow row in tableData.Rows)
-            {
-                Console.WriteLine("-------");
-                foreach (var column in tableDataColumns)
-                {
-                    Console.WriteLine(column);
-                    Console.WriteLine(row[column]);
-                }
+            //foreach (var table in tableNames)
+            //{
+            //    Console.WriteLine("======");
+            //    Console.WriteLine(table);
+            //    DataTable tableData = repo.GetTableData(table); // tblItemOtherData , tblItemOtherData1 , tblItemSize , tblItemType , tblItemPlace , tblColor
+            //    List<string> tableDataColumns = repo.GetColumns(table);
+            //    foreach (DataRow row in tableData.Rows)
+            //    {
+            //        Console.WriteLine("-------");
+            //        foreach (var column in tableDataColumns)
+            //        {
+            //            Console.WriteLine(column);
+            //            Console.WriteLine(row[column]);
+            //        }
 
 
-            }
+            //    }
+
+            //}
+
+
+
+
 
         }
-
-
-
-
-
-    }
     }
 }

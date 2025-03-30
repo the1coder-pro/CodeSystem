@@ -230,6 +230,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportViewsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\ConnectionManager.cs" />
     <Compile Include="Repositories\RegistrationConnectionManager.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -295,6 +300,17 @@
     </None>
     <None Include="ReportDataSet.xss">
       <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportViewsDataSet.xsc">
+      <DependentUpon>ReportViewsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportViewsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportViewsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportViewsDataSet.xss">
+      <DependentUpon>ReportViewsDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\Small Icons\counterclockwise_arrows_button_3d.png" />
     <None Include="Resources\Small Icons\scroll_3d.png" />

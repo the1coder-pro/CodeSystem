@@ -314,6 +314,9 @@ WholesalePrice
 
         }
 
-        
+        private void ItemList_DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

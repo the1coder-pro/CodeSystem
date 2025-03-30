@@ -32,14 +32,14 @@ namespace CodeSystem
         }
 
       
-        private void InitializeLanguage()
+        public void InitializeLanguage()
         {
            // for mainForm 
            foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox && !string.IsNullOrEmpty(textBox.Name))
+                if (control is CheckBox checkBox && !string.IsNullOrEmpty(checkBox.Name))
                 {
-                    textBox.Text = TranslationHelper.Translate(textBox.Name); // Translate TextBox
+                    checkBox.Text = TranslationHelper.Translate(checkBox.Name); // Translate checkBox
                 }
                 else if (control is Button button && !string.IsNullOrEmpty(button.Name))
                 {
@@ -85,7 +85,7 @@ namespace CodeSystem
 
         }
 
-        private void RefreshFlowLayoutPanel()
+        public void RefreshFlowLayoutPanel()
         {
             languageBtn.Text = TranslationHelper.Translate(languageBtn.Name);
             foreach (Control control in flowLayoutPanel3.Controls)
@@ -93,13 +93,35 @@ namespace CodeSystem
                 // Check if the control is a dynamic form or custom user control
                 if (control is UserControl myForm)
                 {
+
+                    foreach (TableLayoutPanel table in myForm.Controls.OfType<TableLayoutPanel>())
+                    {
+                        foreach (Control tableControl in table.Controls)
+                        {
+                            if (tableControl is Button tableButton && !string.IsNullOrEmpty(tableButton.Name))
+                            {
+                                tableButton.Text = TranslationHelper.Translate(tableButton.Name); // Translate using the Button name
+                            }
+                            else if (tableControl is Label tableLabel && !string.IsNullOrEmpty(tableLabel.Name))
+                            {
+                                tableLabel.Text = TranslationHelper.Translate(tableLabel.Name); // Translate using the Label name
+                            }
+                            else if (tableControl is CheckBox tableCheckBox && !string.IsNullOrEmpty(tableCheckBox.Name))
+                            {
+                                tableCheckBox.Text = TranslationHelper.Translate(tableCheckBox.Name); // Translate using the checkBox name
+                            }
+
+                        }
+                    }
                     // Now you have access to the form and its controls
                     foreach (Control innerControl in myForm.Controls)
                     {
-                        // Update TextBox content based on translations
-                        if (innerControl is TextBox textBox && !string.IsNullOrEmpty(textBox.Name))
+
+                       
+
+                        if (innerControl is CheckBox checkBox && !string.IsNullOrEmpty(checkBox.Name))
                         {
-                            textBox.Text = TranslationHelper.Translate(textBox.Name); // Translate using the TextBox name
+                            checkBox.Text = TranslationHelper.Translate(checkBox.Name); // Translate using the checkBox name
                         }
                         // Update Button content based on translations
                         else if (innerControl is Button button && !string.IsNullOrEmpty(button.Name))
@@ -117,7 +139,7 @@ namespace CodeSystem
 
 
             // Optionally refresh the entire form's language
-            RefreshLanguage();
+            //RefreshLanguage();
         }
 
         private void RefreshLanguage()
@@ -210,6 +232,11 @@ namespace CodeSystem
         {
         
             showFormInPanel(new InvoicesForm());
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
 
 
 
@@ -230,21 +257,41 @@ namespace CodeSystem
         private void الفواتيرToolStripMenuItem_Click(object sender, EventArgs e)
         {
             receiptsBtn_Click(sender, e);
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
         }
 
         private void أوامرالصرفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ordersBtn_Click(sender, e);
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
         }
 
         private void itemsBtn_Click(object sender, EventArgs e)
         {
             showFormInPanel(new InventoryForm());
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
         }
 
         private void الأصنافToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            showFormInPanel(new ItemsForm());
+            showFormInPanel(new InventoryForm());
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
         }
 
         private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -255,6 +302,11 @@ namespace CodeSystem
         private void accountsBtn_Click(object sender, EventArgs e)
         {
             showFormInPanel(new AccountsForm());
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
         }
 
         private void languageBtn_Click(object sender, EventArgs e)
@@ -265,11 +317,26 @@ namespace CodeSystem
             // Refresh the flowLayoutPanel to reflect the updated language
             RefreshFlowLayoutPanel();
             InitializeLanguage();
+
+            // check if current layout is inventory form
+            if (flowLayoutPanel3.Controls.Count > 0)
+            {
+                if (flowLayoutPanel3.Controls[0] is InventoryForm)
+                {
+                    InventoryForm inventoryForm = (InventoryForm)flowLayoutPanel3.Controls[0];
+                    inventoryForm.refreshLanguage();
+                }
+            }
         }
 
         private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showFormInPanel(new AccountsForm());
+            TranslationHelper.LoadLanguage(CurrentUser.Instance.language);
+
+            // Refresh the flowLayoutPanel to reflect the updated language
+            RefreshFlowLayoutPanel();
+            InitializeLanguage();
 
         }
     }

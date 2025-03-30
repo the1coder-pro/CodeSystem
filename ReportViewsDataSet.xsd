@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportViewsDataSet" targetNamespace="http://tempuri.org/ReportViewsDataSet.xsd" xmlns:mstns="http://tempuri.org/ReportViewsDataSet.xsd" xmlns="http://tempuri.org/ReportViewsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ReportConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ReportConnectionString (Settings)" PropertyReference="ApplicationSettings.CodeSystem.Properties.Settings.GlobalReference.Default.ReportConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblItem1TableAdapter" GeneratorDataComponentClassName="tblItem1TableAdapter" Name="tblItem1" UserDataComponentName="tblItem1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ReportConnectionString (Settings)" DbObjectName="tblItem1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, NameAr, NameEn, Price, MinimumPrice, NotUsed, WholesalePrice, ShortName, quickitem, Qty, CostPrice, MaxPurchasePrice, MinPurchasePrice, LastPurchaseDate, LastPurchasePrice, VAT, ItemGroupID FROM tblItem1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NameAr" DataSetColumn="NameAr" />
+              <Mapping SourceColumn="NameEn" DataSetColumn="NameEn" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="MinimumPrice" DataSetColumn="MinimumPrice" />
+              <Mapping SourceColumn="NotUsed" DataSetColumn="NotUsed" />
+              <Mapping SourceColumn="WholesalePrice" DataSetColumn="WholesalePrice" />
+              <Mapping SourceColumn="ShortName" DataSetColumn="ShortName" />
+              <Mapping SourceColumn="quickitem" DataSetColumn="quickitem" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="CostPrice" DataSetColumn="CostPrice" />
+              <Mapping SourceColumn="MaxPurchasePrice" DataSetColumn="MaxPurchasePrice" />
+              <Mapping SourceColumn="MinPurchasePrice" DataSetColumn="MinPurchasePrice" />
+              <Mapping SourceColumn="LastPurchaseDate" DataSetColumn="LastPurchaseDate" />
+              <Mapping SourceColumn="LastPurchasePrice" DataSetColumn="LastPurchasePrice" />
+              <Mapping SourceColumn="VAT" DataSetColumn="VAT" />
+              <Mapping SourceColumn="ItemGroupID" DataSetColumn="ItemGroupID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportViewsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ReportViewsDataSet" msprop:Generator_DataSetName="ReportViewsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblItem1" msprop:Generator_RowEvHandlerName="tblItem1RowChangeEventHandler" msprop:Generator_RowDeletedName="tblItem1RowDeleted" msprop:Generator_RowDeletingName="tblItem1RowDeleting" msprop:Generator_RowEvArgName="tblItem1RowChangeEvent" msprop:Generator_TablePropName="tblItem1" msprop:Generator_RowChangedName="tblItem1RowChanged" msprop:Generator_RowChangingName="tblItem1RowChanging" msprop:Generator_TableClassName="tblItem1DataTable" msprop:Generator_RowClassName="tblItem1Row" msprop:Generator_TableVarName="tabletblItem1" msprop:Generator_UserTableName="tblItem1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="NameAr" msprop:Generator_ColumnPropNameInRow="NameAr" msprop:Generator_ColumnPropNameInTable="NameArColumn" msprop:Generator_ColumnVarNameInTable="columnNameAr" msprop:Generator_UserColumnName="NameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameEn" msprop:Generator_ColumnPropNameInRow="NameEn" msprop:Generator_ColumnPropNameInTable="NameEnColumn" msprop:Generator_ColumnVarNameInTable="columnNameEn" msprop:Generator_UserColumnName="NameEn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Price" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_UserColumnName="Price" type="xs:float" minOccurs="0" />
+              <xs:element name="MinimumPrice" msprop:Generator_ColumnPropNameInRow="MinimumPrice" msprop:Generator_ColumnPropNameInTable="MinimumPriceColumn" msprop:Generator_ColumnVarNameInTable="columnMinimumPrice" msprop:Generator_UserColumnName="MinimumPrice" type="xs:float" minOccurs="0" />
+              <xs:element name="NotUsed" msprop:Generator_ColumnPropNameInRow="NotUsed" msprop:Generator_ColumnPropNameInTable="NotUsedColumn" msprop:Generator_ColumnVarNameInTable="columnNotUsed" msprop:Generator_UserColumnName="NotUsed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="WholesalePrice" msprop:Generator_ColumnPropNameInRow="WholesalePrice" msprop:Generator_ColumnPropNameInTable="WholesalePriceColumn" msprop:Generator_ColumnVarNameInTable="columnWholesalePrice" msprop:Generator_UserColumnName="WholesalePrice" type="xs:float" minOccurs="0" />
+              <xs:element name="ShortName" msprop:Generator_ColumnPropNameInRow="ShortName" msprop:Generator_ColumnPropNameInTable="ShortNameColumn" msprop:Generator_ColumnVarNameInTable="columnShortName" msprop:Generator_UserColumnName="ShortName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quickitem" msprop:Generator_ColumnPropNameInRow="quickitem" msprop:Generator_ColumnPropNameInTable="quickitemColumn" msprop:Generator_ColumnVarNameInTable="columnquickitem" msprop:Generator_UserColumnName="quickitem" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Qty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_UserColumnName="Qty" type="xs:float" minOccurs="0" />
+              <xs:element name="CostPrice" msprop:Generator_ColumnPropNameInRow="CostPrice" msprop:Generator_ColumnPropNameInTable="CostPriceColumn" msprop:Generator_ColumnVarNameInTable="columnCostPrice" msprop:Generator_UserColumnName="CostPrice" type="xs:float" minOccurs="0" />
+              <xs:element name="MaxPurchasePrice" msprop:Generator_ColumnPropNameInRow="MaxPurchasePrice" msprop:Generator_ColumnPropNameInTable="MaxPurchasePriceColumn" msprop:Generator_ColumnVarNameInTable="columnMaxPurchasePrice" msprop:Generator_UserColumnName="MaxPurchasePrice" type="xs:float" minOccurs="0" />
+              <xs:element name="MinPurchasePrice" msprop:Generator_ColumnPropNameInRow="MinPurchasePrice" msprop:Generator_ColumnPropNameInTable="MinPurchasePriceColumn" msprop:Generator_ColumnVarNameInTable="columnMinPurchasePrice" msprop:Generator_UserColumnName="MinPurchasePrice" type="xs:float" minOccurs="0" />
+              <xs:element name="LastPurchaseDate" msprop:Generator_ColumnPropNameInRow="LastPurchaseDate" msprop:Generator_ColumnPropNameInTable="LastPurchaseDateColumn" msprop:Generator_ColumnVarNameInTable="columnLastPurchaseDate" msprop:Generator_UserColumnName="LastPurchaseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastPurchasePrice" msprop:Generator_ColumnPropNameInRow="LastPurchasePrice" msprop:Generator_ColumnPropNameInTable="LastPurchasePriceColumn" msprop:Generator_ColumnVarNameInTable="columnLastPurchasePrice" msprop:Generator_UserColumnName="LastPurchasePrice" type="xs:float" minOccurs="0" />
+              <xs:element name="VAT" msprop:Generator_ColumnPropNameInRow="VAT" msprop:Generator_ColumnPropNameInTable="VATColumn" msprop:Generator_ColumnVarNameInTable="columnVAT" msprop:Generator_UserColumnName="VAT" type="xs:float" minOccurs="0" />
+              <xs:element name="ItemGroupID" msprop:Generator_ColumnPropNameInRow="ItemGroupID" msprop:Generator_ColumnPropNameInTable="ItemGroupIDColumn" msprop:Generator_ColumnVarNameInTable="columnItemGroupID" msprop:Generator_UserColumnName="ItemGroupID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

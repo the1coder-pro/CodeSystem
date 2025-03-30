@@ -78,6 +78,16 @@ namespace CodeSystem.Forms
         {
 
         }
+
+        private void tpInvoiceData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

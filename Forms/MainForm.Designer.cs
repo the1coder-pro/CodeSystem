@@ -337,37 +337,37 @@
             // listDataToolStripMenuItem
             // 
             this.listDataToolStripMenuItem.Name = "listDataToolStripMenuItem";
-            this.listDataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listDataToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.listDataToolStripMenuItem.Text = "بيانات القوائم";
             // 
             // unifiedListDataToolStripMenuItem
             // 
             this.unifiedListDataToolStripMenuItem.Name = "unifiedListDataToolStripMenuItem";
-            this.unifiedListDataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.unifiedListDataToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.unifiedListDataToolStripMenuItem.Text = "بيانات القوائم الموحد";
             // 
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.accountsToolStripMenuItem.Text = "الحسابات";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.usersToolStripMenuItem.Text = "المستخدمون";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(220, 6);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.logoutToolStripMenuItem.Text = "تسجيل الخروج";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutBtnToolStripMenuItem_Click);
             // 

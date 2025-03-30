@@ -1,10 +1,11 @@
 {
-	"languageBtn": "اللغة",
+	"languageBtn": "Language\nالعربية",
 	"accountTypeLabel":"نوع الحساب",
 	"paymentAccountTypeLabel": "نوع الحساب المالي",
 	"accountIDLabel": "رقم الحساب",
 	"nameArLabel": "الاسم بالعربي",
 	"nameEnLabel": "الاسم بالانجليزي",
+	"nameShortLabel": "الاسم المختصر",
 	"vatNumberLabel":"الرقم الضريبي",
 	"nationalityLabel":"الجنسية",
 	"phoneLabel":"رقم الهاتف",
@@ -66,7 +67,12 @@
   "itemPlaceLabel": "الموقع",
   "useTypeLabel": "طريقة الاستخدام",
   "selectPictureButton": "اختر الصورة",
-  "searchButton": "بحث"
+  "searchButton": "بحث",
+  "saveButton": "حفظ",
+  "clearButton": "مسح الكل",
+  "exitButton": "خروج",
+  "inventoryTitleLabel": "الأصناف"
+
 
   
 }

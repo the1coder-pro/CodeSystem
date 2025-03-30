@@ -1,10 +1,11 @@
 {
-  "languageBtn": "Language",
+  "languageBtn": "Language\nEn",
   "accountTypeLabel": "Account Type",
   "paymentAccountTypeLabel": "Payment Account Type",
   "accountIDLabel": "Account ID",
   "nameArLabel": "Arabic Name",
   "nameEnLabel": "English Name",
+  "nameShortLabel": "Short Name",
   "vatNumberLabel": "VAT Number",
   "nationalityLabel":"Nationality",
   "phoneLabel":"Phone",
@@ -66,7 +67,11 @@
   "itemPlaceLabel": "Place",
   "useTypeLabel": "Use Type",
   "selectPictureButton": "Upload Picture",
-  "searchButton": "Search"
+  "searchButton": "Search",
+  "saveButton": "Save",
+  "clearButton": "Clear",
+  "exitButton": "Exit",
+  "inventoryTitleLabel": "Categories"
   
   
 }

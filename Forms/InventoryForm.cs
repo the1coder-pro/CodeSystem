@@ -21,6 +21,18 @@ namespace CodeSystem.Forms
             InitializeComponent();
         }
 
+        // refresh language
+        public void refreshLanguage()
+        {
+            string languageToView = CurrentUser.Instance.language == "ar" ? "NameAr" : "NameEn";
+
+            unitTypeComboBox.DisplayMember = languageToView;
+            itemTypeComboBox.DisplayMember = languageToView;
+            itemGroupComboBox.DisplayMember = languageToView;
+            itemColorComboBox.DisplayMember = languageToView;
+            useTypeComboBox.DisplayMember = languageToView;
+        }
+
         public string savedPicturePath;
 
         private void fillFormDemoData()
@@ -65,6 +77,8 @@ namespace CodeSystem.Forms
             this.tblItemTypeTableAdapter.Fill(this.reportDataSet.tblItemType);
             this.tblUseTypeTableAdapter.Fill(this.reportDataSet.tblUseType);
 
+           
+
             unitTypeComboBox.DisplayMember = languageToView;
             itemTypeComboBox.DisplayMember = languageToView;
             itemGroupComboBox.DisplayMember = languageToView;
@@ -74,13 +88,14 @@ namespace CodeSystem.Forms
 
         private void InventoryForm_Load(object sender, EventArgs e)
         {
+         
+
             fillComboBoxes();
             fillFormDemoData();
-
             this.tblItemOtherData1TableAdapter.Fill(this.reportDataSet.tblItemOtherData1);
             this.tblItemBalance1TableAdapter.Fill(this.reportDataSet.tblItemBalance1);
-
             this.tblItemGroupTableAdapter.Fill(this.reportDataSet.tblItemGroup);
+
             dataGridView1.DataSource = reportDataSet.tblItemGroup;
 
         }
@@ -226,6 +241,8 @@ namespace CodeSystem.Forms
 
                 dataGridView1.Refresh();
 
+                MessageBox.Show("Data saved successfully", "Success");  
+                clearButton.PerformClick();
 
             }
             catch (Exception ex)
@@ -378,6 +395,13 @@ namespace CodeSystem.Forms
                     }
                 }
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            clear_form();
+            dataGridView1.ClearSelection();
+
         }
     }
 }

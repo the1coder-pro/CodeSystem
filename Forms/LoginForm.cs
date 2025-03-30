@@ -15,6 +15,8 @@ namespace CodeSystem
         {
             InitializeComponent();
             UserRepository userRepository = new UserRepository();
+            errorLabel.Visible = false;
+
 
             usernameComboBox.DataSource = User.UsernameList();
 
@@ -29,7 +31,6 @@ namespace CodeSystem
         private void loginBtn_Click(object sender, EventArgs e)
         {
 
-
             //Get the username and password from the textboxes
             string username = usernameComboBox.Text;
             string password = passwordTextBox.Text;
@@ -38,12 +39,22 @@ namespace CodeSystem
             if (username == "")
             {
                 MessageBox.Show("يجب اختيار اسم المستخدم أولا");
+                errorLabel.Text = "يجب اختيار اسم المستخدم أولا";
+                errorLabel.Visible = true;
+
+                usernameComboBox.Focus();
+
                 return;
             }
 
             if (password == "")
             {
                 MessageBox.Show("يجب إدخال كلمة المرور أولا");
+                errorLabel.Text = "يجب إدخال كلمة المرور أولا";
+                errorLabel.Visible = true;
+
+                passwordTextBox.Focus();
+
                 return;
             }
 
@@ -51,16 +62,6 @@ namespace CodeSystem
             User user = new User(usernameComboBox.Text, passwordTextBox.Text);
 
 
-            
-            if (user.Password.IsNullOrEmpty())
-            {
-                MessageBox.Show("كلمة المرور غير صحيحة");
-                passwordTextBox.Focus();
-
-                return;
-            }
-
-           
             if (user.Authenticate())
             {
                 User.GetUserGroupID(int.Parse(usernameComboBox.SelectedValue.ToString()));
@@ -95,7 +96,8 @@ namespace CodeSystem
                 mainForm.ShowDialog();
                 // InvoiceTypeSelectForm.Show();
                 this.Show();
-                
+                errorLabel.Visible = false;
+
                 passwordTextBox.Text = "";
 
 
@@ -127,8 +129,14 @@ namespace CodeSystem
                 //myTransactionHistory.Add();
 
                 // Status_Label.Text = "كلمة المرور غير صحيحة، حاول مرة أخرى"
+                MessageBox.Show("كلمة المرور غير صحيحة");
+                errorLabel.Text = "كلمة المرور غير صحيحة";
+                errorLabel.Visible = true;
                 passwordTextBox.Focus();
+
                 passwordTextBox.Text = "";
+
+
             }
 
 

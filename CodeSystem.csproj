@@ -189,12 +189,6 @@
     <Compile Include="Forms\InventoryForm.Designer.cs">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InventoryItemsForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\InventoryItemsForm.Designer.cs">
-      <DependentUpon>InventoryItemsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\InvoicesForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,9 +238,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InventoryItemsForm.resx">
-      <DependentUpon>InventoryItemsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InvoicesForm.resx">
       <DependentUpon>InvoicesForm.cs</DependentUpon>

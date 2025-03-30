@@ -42,6 +42,7 @@
             this.codesystemdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codesystemdbDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.codesystemdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesystemdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesystemdbDataSetBindingSource1)).BeginInit();
@@ -156,12 +157,27 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.IndianRed;
+            this.errorLabel.Location = new System.Drawing.Point(214, 166);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(55, 28);
+            this.errorLabel.TabIndex = 7;
+            this.errorLabel.Text = "error";
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.errorLabel.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(498, 279);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -195,6 +211,7 @@
         private codesystemdbDataSet codesystemdbDataSet;
         private System.Windows.Forms.BindingSource codesystemdbDataSetBindingSource;
         private System.Windows.Forms.BindingSource codesystemdbDataSetBindingSource1;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

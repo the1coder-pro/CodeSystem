@@ -44,6 +44,29 @@
 	"updatesToolStripMenuItem":"التعديلات على البرنامج",
 	"preparePrintingToolStripMenuItem":"اعداد المطبوعات",
     "ToolsStripMenuItem": "أدوات",
-	"calculatorToolStripMenuItem": "الآلة الحاسبة"
+	"calculatorToolStripMenuItem": "الآلة الحاسبة",
+  "barcodeLabel":"الباركود",
+  "groupNameLabel":"المجموعة",
+  "groupIDLabel":"رقم المجموعة",
+  "idLabel": "الرقم",
+  "vatPercentageLabel": "ضريبة القيمة المضافة",
+  "wholesalePriceLabel":"سعر الجملة",
+  "notUsedCheckBox":"غير مستخدم",
+  "quickItemCheckBox": "صنف سريع",
+  "itemNotesLabel":"ملاحظات حول الصنف",
+  "priceWithoutVATLabel": "السعر قبل الضريبة",
+  "priceWithVATLabel": "السعر بعد الضريبة",
+  "minimumPriceLabel": "أقل سعر",
+  "unitTypeLabel": "الحجم (الوحدة)",
+  "unitCountLabel": "عدد الوحدات",
+  "minimumReorderLabel": "الحد الأدنى لإعادة الطلب",
+  "orderQuantityLabel": "كمية الطلب",
+  "itemTypeLabel": "نوع الصنف",
+  "itemColorLabel": "اللون",
+  "itemPlaceLabel": "الموقع",
+  "useTypeLabel": "طريقة الاستخدام",
+  "selectPictureButton": "اختر الصورة",
+  "searchButton": "بحث"
+
   
 }

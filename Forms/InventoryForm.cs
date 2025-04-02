@@ -170,6 +170,8 @@ namespace CodeSystem.Forms
             unitCountTextBox.Text = "";
             minimumReorderTextBox.Text = "";
             orderQuantityTextBox.Text = "";
+
+           
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -219,7 +221,6 @@ namespace CodeSystem.Forms
                 newRow3["ItemID"] = itemIDTextBox.Text;
                 newRow3["OrderMinammBalance"] = minimumReorderTextBox.Text;
                 newRow3["OrderCount"] = orderQuantityTextBox.Text;
-
                 reportDataSet.tblItemBalance1.Rows.Add(newRow3);
 
                 // Set all other columns in the added row to zero, except for the ones you added
@@ -242,7 +243,7 @@ namespace CodeSystem.Forms
                 dataGridView1.Refresh();
 
                 MessageBox.Show("Data saved successfully", "Success");  
-                clearButton.PerformClick();
+                deleteButton.PerformClick();
 
             }
             catch (Exception ex)
@@ -296,8 +297,9 @@ namespace CodeSystem.Forms
                     }
                 }
             }
-        
-    }
+
+
+        }
        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -397,11 +399,205 @@ namespace CodeSystem.Forms
             }
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(itemIDTextBox.Text, out int id))
+            {
+                // Delete from tblItemBalance1
+                DataRow[] balanceRows = reportDataSet.tblItemBalance1.Select($"ItemID = {id}");
+                foreach (DataRow balanceRow in balanceRows)
+                {
+                    balanceRow.Delete();
+                }
+                tblItemBalance1TableAdapter.Update(reportDataSet.tblItemBalance1);
+
+                // Delete from tblItemOtherData1
+                DataRow[] otherDataRows = reportDataSet.tblItemOtherData1.Select($"ItemID = {id}");
+                foreach (DataRow otherDataRow in otherDataRows)
+                {
+                    otherDataRow.Delete();
+                }
+                tblItemOtherData1TableAdapter.Update(reportDataSet.tblItemOtherData1);
+
+                // Delete from tblItem
+                DataRow[] itemRows = reportDataSet.tblItem.Select($"ID = {id}");
+                foreach (DataRow itemRow in itemRows)
+                {
+                    itemRow.Delete();
+                }
+                tblItemTableAdapter.Update(reportDataSet.tblItem);
+
+                // Delete from tblItemGroup
+                DataRow[] groupRows = reportDataSet.tblItemGroup.Select($"ID = {id}");
+                foreach (DataRow groupRow in groupRows)
+                {
+                    groupRow.Delete();
+                }
+                tblItemGroupTableAdapter.Update(reportDataSet.tblItemGroup);
+
+                // Remove the row from the DataGridView
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells["iDDataGridViewTextBoxColumn"].Value) == id)
+                    {
+                        dataGridView1.Rows.Remove(row);
+                        break;
+                    }
+                }
+
+                clear_form();
+                dataGridView1.ClearSelection();
+                MessageBox.Show("Data deleted successfully", "Success");
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid ID.");
+            }
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
         {
             clear_form();
             dataGridView1.ClearSelection();
 
+            clear_form();
+            EnableFormFields(true); // Assuming you have a method to enable form fields for new entry
+            dataGridView1.ClearSelection();
         }
+
+            
+
+    private void EnableFormFields(bool enable)
+    {
+        nameArabicTextBox.Enabled = enable;
+        nameEnglishTextBox.Enabled = enable;
+        nameShortTextBox.Enabled = enable;
+        VATPercentageTextBox.Enabled = enable;
+        notUsedCheckBox.Enabled = enable;
+        useTypeComboBox.Enabled = enable;
+        itemTypeComboBox.Enabled = enable;
+        itemNotesTextBox.Enabled = enable;
+        priceWithoutVATTextBox.Enabled = enable;
+        minimumPriceTextBox.Enabled = enable;
+        wholesalePriceTextBox.Enabled = enable;
+        quickItemCheckBox.Enabled = enable;
+        groupIDTextBox.Enabled = enable;
+        priceWithVATTextBox.Enabled = enable;
+        barcodeNumberTextBox.Enabled = enable;
+        itemColorComboBox.Enabled = enable;
+        itemPlaceComboBox.Enabled = enable;
+        unitTypeComboBox.Enabled = enable;
+        unitCountTextBox.Enabled = enable;
+        minimumReorderTextBox.Enabled = enable;
+        orderQuantityTextBox.Enabled = enable;
+    }
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(itemIDTextBox.Text) && int.TryParse(itemIDTextBox.Text, out int id))
+                {
+                    // Update tblItemGroup
+                    DataRow[] groupRows = reportDataSet.tblItemGroup.Select($"ID = {id}");
+                    if (groupRows.Length > 0)
+                    {
+                        DataRow groupRow = groupRows[0];
+                        groupRow["NameAr"] = nameArabicTextBox.Text;
+                        groupRow["NameEn"] = nameEnglishTextBox.Text;
+                        groupRow["ShortName"] = nameShortTextBox.Text;
+                        groupRow["VAT"] = VATPercentageTextBox.Text;
+                        groupRow["NotUsed"] = notUsedCheckBox.Checked;
+                        groupRow["UseTypeID"] = useTypeComboBox.SelectedValue;
+                        groupRow["ItemTypeID"] = itemTypeComboBox.SelectedValue;
+                        groupRow["FilePath"] = savedPicturePath;
+                        groupRow["ItemNote"] = itemNotesTextBox.Text;
+                        tblItemGroupTableAdapter.Update(reportDataSet.tblItemGroup);
+                        reportDataSet.tblItemGroup.AcceptChanges();
+                    }
+
+                    // Update tblItem
+                    DataRow[] itemRows = reportDataSet.tblItem.Select($"ID = {id}");
+                    if (itemRows.Length > 0)
+                    {
+                        DataRow itemRow = itemRows[0];
+                        itemRow["Price"] = priceWithoutVATTextBox.Text;
+                        itemRow["MinimumPrice"] = minimumPriceTextBox.Text;
+                        itemRow["WholesalePrice"] = wholesalePriceTextBox.Text;
+                        itemRow["quickitem"] = quickItemCheckBox.Checked;
+                        itemRow["ItemGroupID"] = groupIDTextBox.Text;
+                        itemRow["WithVatPrice"] = priceWithVATTextBox.Text;
+                        tblItemTableAdapter.Update(reportDataSet.tblItem);
+                        reportDataSet.tblItem.AcceptChanges();
+                    }
+
+                    // Update or Add tblItemOtherData1
+                    DataRow[] otherDataRows = reportDataSet.tblItemOtherData1.Select($"ItemID = {id}");
+                    if (otherDataRows.Length > 0)
+                    {
+                        DataRow otherDataRow = otherDataRows[0];
+                        otherDataRow["BarcodeNo"] = barcodeNumberTextBox.Text;
+                        otherDataRow["ColorID"] = itemColorComboBox.SelectedValue;
+                        otherDataRow["ItemPlaceID"] = itemPlaceComboBox.SelectedValue ?? DBNull.Value;
+                        otherDataRow["ItemSizeID"] = unitTypeComboBox.SelectedValue;
+                        otherDataRow["UnitCount"] = unitCountTextBox.Text;
+                        tblItemOtherData1TableAdapter.Update(reportDataSet.tblItemOtherData1);
+                        reportDataSet.tblItemOtherData1.AcceptChanges();
+                    }
+                    else
+                    {
+                        DataRow newOtherDataRow = reportDataSet.tblItemOtherData1.NewRow();
+                        newOtherDataRow["ItemID"] = id;
+                        newOtherDataRow["BarcodeNo"] = barcodeNumberTextBox.Text;
+                        newOtherDataRow["ColorID"] = itemColorComboBox.SelectedValue;
+                        newOtherDataRow["ItemPlaceID"] = itemPlaceComboBox.SelectedValue ?? DBNull.Value;
+                        newOtherDataRow["ItemSizeID"] = unitTypeComboBox.SelectedValue;
+                        newOtherDataRow["UnitCount"] = unitCountTextBox.Text;
+                        reportDataSet.tblItemOtherData1.Rows.Add(newOtherDataRow);
+                        tblItemOtherData1TableAdapter.Update(reportDataSet.tblItemOtherData1);
+                        reportDataSet.tblItemOtherData1.AcceptChanges();
+                    }
+
+                    // Update or Add tblItemBalance1
+                    DataRow[] balanceRows = reportDataSet.tblItemBalance1.Select($"ItemID = {id}");
+                    if (balanceRows.Length > 0)
+                    {
+                        DataRow balanceRow = balanceRows[0];
+                        balanceRow["OrderMinammBalance"] = minimumReorderTextBox.Text;
+                        balanceRow["OrderCount"] = orderQuantityTextBox.Text;
+                        tblItemBalance1TableAdapter.Update(reportDataSet.tblItemBalance1);
+                        reportDataSet.tblItemBalance1.AcceptChanges();
+                    }
+                    else
+                    {
+                        DataRow newBalanceRow = reportDataSet.tblItemBalance1.NewRow();
+                        newBalanceRow["ItemID"] = id;
+                        newBalanceRow["OrderMinammBalance"] = minimumReorderTextBox.Text;
+                        newBalanceRow["OrderCount"] = orderQuantityTextBox.Text;
+                        reportDataSet.tblItemBalance1.Rows.Add(newBalanceRow);
+                        tblItemBalance1TableAdapter.Update(reportDataSet.tblItemBalance1);
+                        reportDataSet.tblItemBalance1.AcceptChanges();
+                    }
+
+                    // Refresh the DataGridView
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = reportDataSet.tblItemGroup;
+                    dataGridView1.Refresh();
+
+                    MessageBox.Show("Data updated successfully", "Success");
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+      
+
+     
     }
 }

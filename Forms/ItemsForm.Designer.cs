@@ -136,7 +136,7 @@
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 449F));
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
-            this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
+            this.TableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.TableLayoutPanel6.Controls.Add(this.SearchIn_ComboBox, 4, 0);
             this.TableLayoutPanel6.Controls.Add(this.SearchFor_Label, 3, 0);
             this.TableLayoutPanel6.Controls.Add(this.SearchIn_Label, 5, 0);
@@ -157,7 +157,7 @@
             this.SearchIn_ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchIn_ComboBox.Font = new System.Drawing.Font("Tahoma", 12F);
             this.SearchIn_ComboBox.FormattingEnabled = true;
-            this.SearchIn_ComboBox.Location = new System.Drawing.Point(760, 4);
+            this.SearchIn_ComboBox.Location = new System.Drawing.Point(759, 4);
             this.SearchIn_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchIn_ComboBox.Name = "SearchIn_ComboBox";
             this.SearchIn_ComboBox.Size = new System.Drawing.Size(166, 32);
@@ -168,7 +168,7 @@
             this.SearchFor_Label.AutoSize = true;
             this.SearchFor_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchFor_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchFor_Label.Location = new System.Drawing.Point(660, 0);
+            this.SearchFor_Label.Location = new System.Drawing.Point(659, 0);
             this.SearchFor_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchFor_Label.Name = "SearchFor_Label";
             this.SearchFor_Label.Size = new System.Drawing.Size(92, 54);
@@ -181,10 +181,10 @@
             this.SearchIn_Label.AutoSize = true;
             this.SearchIn_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchIn_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchIn_Label.Location = new System.Drawing.Point(934, 0);
+            this.SearchIn_Label.Location = new System.Drawing.Point(933, 0);
             this.SearchIn_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchIn_Label.Name = "SearchIn_Label";
-            this.SearchIn_Label.Size = new System.Drawing.Size(142, 54);
+            this.SearchIn_Label.Size = new System.Drawing.Size(143, 54);
             this.SearchIn_Label.TabIndex = 0;
             this.SearchIn_Label.Text = "البحث في";
             this.SearchIn_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,7 +193,7 @@
             // 
             this.SearchInMyList_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchInMyList_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInMyList_Button.Location = new System.Drawing.Point(127, 4);
+            this.SearchInMyList_Button.Location = new System.Drawing.Point(126, 4);
             this.SearchInMyList_Button.Margin = new System.Windows.Forms.Padding(4);
             this.SearchInMyList_Button.Name = "SearchInMyList_Button";
             this.SearchInMyList_Button.Size = new System.Drawing.Size(76, 46);
@@ -208,7 +208,7 @@
             this.SearchOutList_Button.Location = new System.Drawing.Point(4, 4);
             this.SearchOutList_Button.Margin = new System.Windows.Forms.Padding(4);
             this.SearchOutList_Button.Name = "SearchOutList_Button";
-            this.SearchOutList_Button.Size = new System.Drawing.Size(115, 46);
+            this.SearchOutList_Button.Size = new System.Drawing.Size(114, 46);
             this.SearchOutList_Button.TabIndex = 3;
             this.SearchOutList_Button.Text = "البحث في القائمة الخارجية";
             this.SearchOutList_Button.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             // 
             this.SearchFor_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchFor_TextBox.Font = new System.Drawing.Font("AL-Mateen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.SearchFor_TextBox.Location = new System.Drawing.Point(211, 4);
+            this.SearchFor_TextBox.Location = new System.Drawing.Point(210, 4);
             this.SearchFor_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchFor_TextBox.Name = "SearchFor_TextBox";
             this.SearchFor_TextBox.Size = new System.Drawing.Size(441, 41);
@@ -229,7 +229,7 @@
             this.TableLayoutPanel9.ColumnCount = 3;
             this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.13662F));
             this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.86337F));
-            this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.TableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
             this.TableLayoutPanel9.Controls.Add(this.SearchResult_Label, 2, 0);
             this.TableLayoutPanel9.Controls.Add(this.Result_DataGridView, 1, 0);
             this.TableLayoutPanel9.Controls.Add(this.Add_Button, 0, 0);
@@ -247,10 +247,10 @@
             this.SearchResult_Label.AutoSize = true;
             this.SearchResult_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchResult_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchResult_Label.Location = new System.Drawing.Point(883, 0);
+            this.SearchResult_Label.Location = new System.Drawing.Point(882, 0);
             this.SearchResult_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchResult_Label.Name = "SearchResult_Label";
-            this.SearchResult_Label.Size = new System.Drawing.Size(193, 95);
+            this.SearchResult_Label.Size = new System.Drawing.Size(194, 95);
             this.SearchResult_Label.TabIndex = 0;
             this.SearchResult_Label.Text = "نتيجة البحث";
             this.SearchResult_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +266,7 @@
             this.SearchedItemPrice_Column,
             this.SearchedUnitCount_Column});
             this.Result_DataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Result_DataGridView.Location = new System.Drawing.Point(102, 4);
+            this.Result_DataGridView.Location = new System.Drawing.Point(101, 4);
             this.Result_DataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.Result_DataGridView.Name = "Result_DataGridView";
             this.Result_DataGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -320,7 +320,7 @@
             this.Add_Button.Location = new System.Drawing.Point(4, 4);
             this.Add_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(90, 87);
+            this.Add_Button.Size = new System.Drawing.Size(89, 87);
             this.Add_Button.TabIndex = 2;
             this.Add_Button.Text = "إضافة";
             this.Add_Button.UseVisualStyleBackColor = true;
@@ -792,7 +792,7 @@
             this.TableLayoutPanel11.ColumnCount = 3;
             this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.56075F));
             this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.43925F));
-            this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.TableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.TableLayoutPanel11.Controls.Add(this.VAT_TextBox, 2, 0);
             this.TableLayoutPanel11.Controls.Add(this.NotUsed_CheckBox, 0, 0);
             this.TableLayoutPanel11.Controls.Add(this.NotUsed_Label, 1, 0);
@@ -809,10 +809,10 @@
             // 
             this.VAT_TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VAT_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.VAT_TextBox.Location = new System.Drawing.Point(134, 4);
+            this.VAT_TextBox.Location = new System.Drawing.Point(133, 4);
             this.VAT_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.VAT_TextBox.Name = "VAT_TextBox";
-            this.VAT_TextBox.Size = new System.Drawing.Size(63, 34);
+            this.VAT_TextBox.Size = new System.Drawing.Size(64, 34);
             this.VAT_TextBox.TabIndex = 13;
             this.VAT_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -837,7 +837,7 @@
             this.NotUsed_Label.Location = new System.Drawing.Point(30, 0);
             this.NotUsed_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NotUsed_Label.Name = "NotUsed_Label";
-            this.NotUsed_Label.Size = new System.Drawing.Size(96, 30);
+            this.NotUsed_Label.Size = new System.Drawing.Size(95, 30);
             this.NotUsed_Label.TabIndex = 10;
             this.NotUsed_Label.Text = "غير مستخدم";
             this.NotUsed_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

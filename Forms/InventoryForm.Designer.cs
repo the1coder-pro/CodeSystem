@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.itemTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -49,15 +50,25 @@
             this.nameArLabel = new System.Windows.Forms.Label();
             this.groupIDLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.undoButton = new System.Windows.Forms.Button();
+            this.newButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.inventoryTitleLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameArDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameEnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotUsed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.UseTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblItemGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemIDTextBox = new System.Windows.Forms.TextBox();
             this.groupIDTextBox = new System.Windows.Forms.TextBox();
@@ -113,16 +124,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameArDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameEnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotUsed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.UseTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tblItemTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -188,9 +189,9 @@
             // wholesalePriceTextBox
             // 
             this.wholesalePriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.wholesalePriceTextBox.Location = new System.Drawing.Point(3, 6);
+            this.wholesalePriceTextBox.Location = new System.Drawing.Point(3, 7);
             this.wholesalePriceTextBox.Name = "wholesalePriceTextBox";
-            this.wholesalePriceTextBox.Size = new System.Drawing.Size(379, 24);
+            this.wholesalePriceTextBox.Size = new System.Drawing.Size(411, 24);
             this.wholesalePriceTextBox.TabIndex = 73;
             // 
             // wholesalePriceLabel
@@ -198,9 +199,9 @@
             this.wholesalePriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.wholesalePriceLabel.BackColor = System.Drawing.Color.Transparent;
             this.wholesalePriceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wholesalePriceLabel.Location = new System.Drawing.Point(388, 6);
+            this.wholesalePriceLabel.Location = new System.Drawing.Point(420, 7);
             this.wholesalePriceLabel.Name = "wholesalePriceLabel";
-            this.wholesalePriceLabel.Size = new System.Drawing.Size(248, 23);
+            this.wholesalePriceLabel.Size = new System.Drawing.Size(216, 23);
             this.wholesalePriceLabel.TabIndex = 51;
             this.wholesalePriceLabel.Text = "Wholesale Price";
             this.wholesalePriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -230,10 +231,10 @@
             this.itemNotesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.itemNotesTextBox.Location = new System.Drawing.Point(3, 75);
+            this.itemNotesTextBox.Location = new System.Drawing.Point(3, 79);
             this.itemNotesTextBox.Multiline = true;
             this.itemNotesTextBox.Name = "itemNotesTextBox";
-            this.itemNotesTextBox.Size = new System.Drawing.Size(379, 79);
+            this.itemNotesTextBox.Size = new System.Drawing.Size(411, 79);
             this.itemNotesTextBox.TabIndex = 77;
             // 
             // itemNotesLabel
@@ -242,9 +243,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemNotesLabel.BackColor = System.Drawing.Color.Transparent;
             this.itemNotesLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemNotesLabel.Location = new System.Drawing.Point(388, 72);
+            this.itemNotesLabel.Location = new System.Drawing.Point(420, 76);
             this.itemNotesLabel.Name = "itemNotesLabel";
-            this.itemNotesLabel.Size = new System.Drawing.Size(248, 23);
+            this.itemNotesLabel.Size = new System.Drawing.Size(216, 23);
             this.itemNotesLabel.TabIndex = 45;
             this.itemNotesLabel.Text = "Item Notes";
             this.itemNotesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -252,9 +253,9 @@
             // VATPercentageTextBox
             // 
             this.VATPercentageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.VATPercentageTextBox.Location = new System.Drawing.Point(3, 42);
+            this.VATPercentageTextBox.Location = new System.Drawing.Point(3, 45);
             this.VATPercentageTextBox.Name = "VATPercentageTextBox";
-            this.VATPercentageTextBox.Size = new System.Drawing.Size(379, 24);
+            this.VATPercentageTextBox.Size = new System.Drawing.Size(411, 24);
             this.VATPercentageTextBox.TabIndex = 74;
             // 
             // vatPercentageLabel
@@ -262,9 +263,9 @@
             this.vatPercentageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.vatPercentageLabel.BackColor = System.Drawing.Color.Transparent;
             this.vatPercentageLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vatPercentageLabel.Location = new System.Drawing.Point(388, 42);
+            this.vatPercentageLabel.Location = new System.Drawing.Point(420, 45);
             this.vatPercentageLabel.Name = "vatPercentageLabel";
-            this.vatPercentageLabel.Size = new System.Drawing.Size(248, 23);
+            this.vatPercentageLabel.Size = new System.Drawing.Size(216, 23);
             this.vatPercentageLabel.TabIndex = 43;
             this.vatPercentageLabel.Text = "VAT";
             this.vatPercentageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,18 +287,18 @@
             this.nameEnglishTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameEnglishTextBox.Location = new System.Drawing.Point(3, 219);
+            this.nameEnglishTextBox.Location = new System.Drawing.Point(3, 222);
             this.nameEnglishTextBox.Name = "nameEnglishTextBox";
-            this.nameEnglishTextBox.Size = new System.Drawing.Size(182, 24);
+            this.nameEnglishTextBox.Size = new System.Drawing.Size(169, 24);
             this.nameEnglishTextBox.TabIndex = 60;
             // 
             // nameEnLabel
             // 
             this.nameEnLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nameEnLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameEnLabel.Location = new System.Drawing.Point(191, 228);
+            this.nameEnLabel.Location = new System.Drawing.Point(178, 224);
             this.nameEnLabel.Name = "nameEnLabel";
-            this.nameEnLabel.Size = new System.Drawing.Size(185, 23);
+            this.nameEnLabel.Size = new System.Drawing.Size(217, 23);
             this.nameEnLabel.TabIndex = 40;
             this.nameEnLabel.Text = "English Name";
             this.nameEnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -307,18 +308,18 @@
             this.nameArabicTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameArabicTextBox.Location = new System.Drawing.Point(3, 180);
+            this.nameArabicTextBox.Location = new System.Drawing.Point(3, 187);
             this.nameArabicTextBox.Name = "nameArabicTextBox";
-            this.nameArabicTextBox.Size = new System.Drawing.Size(182, 24);
+            this.nameArabicTextBox.Size = new System.Drawing.Size(169, 24);
             this.nameArabicTextBox.TabIndex = 59;
             // 
             // nameArLabel
             // 
             this.nameArLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nameArLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameArLabel.Location = new System.Drawing.Point(191, 185);
+            this.nameArLabel.Location = new System.Drawing.Point(178, 190);
             this.nameArLabel.Name = "nameArLabel";
-            this.nameArLabel.Size = new System.Drawing.Size(185, 23);
+            this.nameArLabel.Size = new System.Drawing.Size(217, 23);
             this.nameArLabel.TabIndex = 37;
             this.nameArLabel.Text = "Arabic Name";
             this.nameArLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -328,9 +329,9 @@
             this.groupIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupIDLabel.BackColor = System.Drawing.Color.Transparent;
             this.groupIDLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupIDLabel.Location = new System.Drawing.Point(191, 44);
+            this.groupIDLabel.Location = new System.Drawing.Point(178, 63);
             this.groupIDLabel.Name = "groupIDLabel";
-            this.groupIDLabel.Size = new System.Drawing.Size(185, 44);
+            this.groupIDLabel.Size = new System.Drawing.Size(217, 38);
             this.groupIDLabel.TabIndex = 35;
             this.groupIDLabel.Text = "GroupID";
             this.groupIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,80 +341,101 @@
             this.idLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idLabel.BackColor = System.Drawing.Color.Transparent;
             this.idLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(191, 0);
+            this.idLabel.Location = new System.Drawing.Point(178, 10);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(185, 39);
+            this.idLabel.Size = new System.Drawing.Size(217, 36);
             this.idLabel.TabIndex = 33;
             this.idLabel.Text = "ID";
             this.idLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button5
+            // editButton
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(319, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(73, 86);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.editButton.BackColor = System.Drawing.Color.White;
+            this.editButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
+            this.editButton.Location = new System.Drawing.Point(319, 3);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(73, 86);
+            this.editButton.TabIndex = 4;
+            this.editButton.Text = "Edit";
+            this.editButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // button4
+            // undoButton
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(240, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 86);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.undoButton.BackColor = System.Drawing.Color.Silver;
+            this.undoButton.Enabled = false;
+            this.undoButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("undoButton.Image")));
+            this.undoButton.Location = new System.Drawing.Point(240, 3);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(73, 86);
+            this.undoButton.TabIndex = 3;
+            this.undoButton.Text = "Undo";
+            this.undoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.undoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.undoButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // newButton
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(161, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 86);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.newButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newButton.Image = ((System.Drawing.Image)(resources.GetObject("newButton.Image")));
+            this.newButton.Location = new System.Drawing.Point(161, 3);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(73, 86);
+            this.newButton.TabIndex = 2;
+            this.newButton.Text = "New";
+            this.newButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.newButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
-            // clearButton
+            // deleteButton
             // 
-            this.clearButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.clearButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(82, 3);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(73, 86);
-            this.clearButton.TabIndex = 1;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = false;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.deleteButton.BackColor = System.Drawing.Color.Brown;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
+            this.deleteButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.deleteButton.Location = new System.Drawing.Point(82, 3);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(73, 86);
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Image = global::CodeSystem.Properties.Resources.door_3d;
-            this.exitButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
             this.exitButton.Location = new System.Drawing.Point(3, 3);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(73, 86);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "Exit";
+            this.exitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exitButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.LightBlue;
-            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.saveButton.BackColor = System.Drawing.Color.White;
             this.saveButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.saveButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.saveButton.ForeColor = System.Drawing.Color.Black;
+            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
             this.saveButton.Location = new System.Drawing.Point(398, 3);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(74, 86);
             this.saveButton.TabIndex = 5;
             this.saveButton.Text = "Save";
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -426,10 +448,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.button5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.clearButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.editButton, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.undoButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.newButton, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.deleteButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.exitButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.saveButton, 5, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 11);
@@ -443,6 +465,7 @@
             // 
             this.inventoryTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inventoryTitleLabel.AutoSize = true;
+            this.inventoryTitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.inventoryTitleLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryTitleLabel.Location = new System.Drawing.Point(1305, 32);
             this.inventoryTitleLabel.Name = "inventoryTitleLabel";
@@ -479,6 +502,96 @@
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameArDataGridViewTextBoxColumn
+            // 
+            this.nameArDataGridViewTextBoxColumn.DataPropertyName = "NameAr";
+            this.nameArDataGridViewTextBoxColumn.HeaderText = "NameAr";
+            this.nameArDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameArDataGridViewTextBoxColumn.Name = "nameArDataGridViewTextBoxColumn";
+            this.nameArDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameArDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameEnDataGridViewTextBoxColumn
+            // 
+            this.nameEnDataGridViewTextBoxColumn.DataPropertyName = "NameEn";
+            this.nameEnDataGridViewTextBoxColumn.HeaderText = "NameEn";
+            this.nameEnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameEnDataGridViewTextBoxColumn.Name = "nameEnDataGridViewTextBoxColumn";
+            this.nameEnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameEnDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ShortName
+            // 
+            this.ShortName.DataPropertyName = "ShortName";
+            this.ShortName.HeaderText = "ShortName";
+            this.ShortName.MinimumWidth = 6;
+            this.ShortName.Name = "ShortName";
+            this.ShortName.ReadOnly = true;
+            this.ShortName.Width = 125;
+            // 
+            // VAT
+            // 
+            this.VAT.DataPropertyName = "VAT";
+            this.VAT.HeaderText = "VAT";
+            this.VAT.MinimumWidth = 6;
+            this.VAT.Name = "VAT";
+            this.VAT.ReadOnly = true;
+            this.VAT.Width = 125;
+            // 
+            // NotUsed
+            // 
+            this.NotUsed.DataPropertyName = "NotUsed";
+            this.NotUsed.HeaderText = "NotUsed";
+            this.NotUsed.MinimumWidth = 6;
+            this.NotUsed.Name = "NotUsed";
+            this.NotUsed.ReadOnly = true;
+            this.NotUsed.Width = 125;
+            // 
+            // UseTypeID
+            // 
+            this.UseTypeID.DataPropertyName = "UseTypeID";
+            this.UseTypeID.HeaderText = "UseTypeID";
+            this.UseTypeID.MinimumWidth = 6;
+            this.UseTypeID.Name = "UseTypeID";
+            this.UseTypeID.ReadOnly = true;
+            this.UseTypeID.Width = 125;
+            // 
+            // ItemTypeID
+            // 
+            this.ItemTypeID.DataPropertyName = "ItemTypeID";
+            this.ItemTypeID.HeaderText = "ItemTypeID";
+            this.ItemTypeID.MinimumWidth = 6;
+            this.ItemTypeID.Name = "ItemTypeID";
+            this.ItemTypeID.ReadOnly = true;
+            this.ItemTypeID.Width = 125;
+            // 
+            // FilePath
+            // 
+            this.FilePath.DataPropertyName = "FilePath";
+            this.FilePath.HeaderText = "FilePath";
+            this.FilePath.MinimumWidth = 6;
+            this.FilePath.Name = "FilePath";
+            this.FilePath.ReadOnly = true;
+            this.FilePath.Width = 125;
+            // 
+            // ItemNote
+            // 
+            this.ItemNote.DataPropertyName = "ItemNote";
+            this.ItemNote.HeaderText = "ItemNote";
+            this.ItemNote.MinimumWidth = 6;
+            this.ItemNote.Name = "ItemNote";
+            this.ItemNote.ReadOnly = true;
+            this.ItemNote.Width = 125;
+            // 
             // tblItemGroupBindingSource
             // 
             this.tblItemGroupBindingSource.DataMember = "tblItemGroup";
@@ -491,7 +604,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemIDTextBox.Location = new System.Drawing.Point(3, 3);
             this.itemIDTextBox.Name = "itemIDTextBox";
-            this.itemIDTextBox.Size = new System.Drawing.Size(182, 24);
+            this.itemIDTextBox.Size = new System.Drawing.Size(169, 24);
             this.itemIDTextBox.TabIndex = 55;
             // 
             // groupIDTextBox
@@ -499,9 +612,9 @@
             this.groupIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupIDTextBox.Location = new System.Drawing.Point(3, 42);
+            this.groupIDTextBox.Location = new System.Drawing.Point(3, 60);
             this.groupIDTextBox.Name = "groupIDTextBox";
-            this.groupIDTextBox.Size = new System.Drawing.Size(182, 24);
+            this.groupIDTextBox.Size = new System.Drawing.Size(169, 24);
             this.groupIDTextBox.TabIndex = 56;
             this.groupIDTextBox.TextChanged += new System.EventHandler(this.groupIDTextBox_TextChanged);
             // 
@@ -510,21 +623,22 @@
             this.nameShortTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameShortTextBox.Location = new System.Drawing.Point(3, 266);
+            this.nameShortTextBox.Location = new System.Drawing.Point(3, 256);
             this.nameShortTextBox.Name = "nameShortTextBox";
-            this.nameShortTextBox.Size = new System.Drawing.Size(182, 24);
+            this.nameShortTextBox.Size = new System.Drawing.Size(169, 24);
             this.nameShortTextBox.TabIndex = 61;
             // 
             // nameShortLabel
             // 
-            this.nameShortLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameShortLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nameShortLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameShortLabel.Location = new System.Drawing.Point(191, 286);
+            this.nameShortLabel.Location = new System.Drawing.Point(178, 253);
             this.nameShortLabel.Name = "nameShortLabel";
-            this.nameShortLabel.Size = new System.Drawing.Size(185, 23);
+            this.nameShortLabel.Size = new System.Drawing.Size(217, 23);
             this.nameShortLabel.TabIndex = 57;
             this.nameShortLabel.Text = "Short Name";
-            this.nameShortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nameShortLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // priceWithVATTextBox
             // 
@@ -643,18 +757,18 @@
             this.barcodeNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.barcodeNumberTextBox.Location = new System.Drawing.Point(3, 143);
+            this.barcodeNumberTextBox.Location = new System.Drawing.Point(3, 146);
             this.barcodeNumberTextBox.Name = "barcodeNumberTextBox";
-            this.barcodeNumberTextBox.Size = new System.Drawing.Size(182, 24);
+            this.barcodeNumberTextBox.Size = new System.Drawing.Size(169, 24);
             this.barcodeNumberTextBox.TabIndex = 58;
             // 
             // barcodeLabel
             // 
             this.barcodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.barcodeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barcodeLabel.Location = new System.Drawing.Point(191, 147);
+            this.barcodeLabel.Location = new System.Drawing.Point(178, 152);
             this.barcodeLabel.Name = "barcodeLabel";
-            this.barcodeLabel.Size = new System.Drawing.Size(185, 23);
+            this.barcodeLabel.Size = new System.Drawing.Size(217, 23);
             this.barcodeLabel.TabIndex = 80;
             this.barcodeLabel.Text = "Barcode";
             this.barcodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -665,7 +779,7 @@
             this.itemColorComboBox.DataSource = this.tblColorBindingSource;
             this.itemColorComboBox.DisplayMember = "NameAr";
             this.itemColorComboBox.FormattingEnabled = true;
-            this.itemColorComboBox.Location = new System.Drawing.Point(3, 310);
+            this.itemColorComboBox.Location = new System.Drawing.Point(3, 309);
             this.itemColorComboBox.Name = "itemColorComboBox";
             this.itemColorComboBox.Size = new System.Drawing.Size(210, 24);
             this.itemColorComboBox.TabIndex = 70;
@@ -754,9 +868,9 @@
             this.itemGroupComboBox.DataSource = this.tblItemGroupBindingSource;
             this.itemGroupComboBox.DisplayMember = "NameAr";
             this.itemGroupComboBox.FormattingEnabled = true;
-            this.itemGroupComboBox.Location = new System.Drawing.Point(3, 97);
+            this.itemGroupComboBox.Location = new System.Drawing.Point(3, 111);
             this.itemGroupComboBox.Name = "itemGroupComboBox";
-            this.itemGroupComboBox.Size = new System.Drawing.Size(182, 24);
+            this.itemGroupComboBox.Size = new System.Drawing.Size(169, 24);
             this.itemGroupComboBox.TabIndex = 57;
             this.itemGroupComboBox.ValueMember = "ID";
             this.itemGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.itemGroupComboBox_SelectedIndexChanged);
@@ -765,43 +879,50 @@
             // 
             this.groupNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupNameLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupNameLabel.Location = new System.Drawing.Point(191, 105);
+            this.groupNameLabel.Location = new System.Drawing.Point(178, 114);
             this.groupNameLabel.Name = "groupNameLabel";
-            this.groupNameLabel.Size = new System.Drawing.Size(185, 23);
+            this.groupNameLabel.Size = new System.Drawing.Size(217, 23);
             this.groupNameLabel.TabIndex = 87;
             this.groupNameLabel.Text = "Group";
             this.groupNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // quickItemCheckBox
             // 
+            this.quickItemCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.quickItemCheckBox.AutoSize = true;
             this.quickItemCheckBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickItemCheckBox.Location = new System.Drawing.Point(761, 621);
+            this.quickItemCheckBox.Location = new System.Drawing.Point(280, 291);
             this.quickItemCheckBox.Name = "quickItemCheckBox";
-            this.quickItemCheckBox.Size = new System.Drawing.Size(115, 27);
+            this.quickItemCheckBox.Size = new System.Drawing.Size(115, 38);
             this.quickItemCheckBox.TabIndex = 76;
             this.quickItemCheckBox.Text = "Quick Item";
+            this.quickItemCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.quickItemCheckBox.UseVisualStyleBackColor = true;
             // 
             // notUsedCheckBox
             // 
+            this.notUsedCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.notUsedCheckBox.AutoSize = true;
             this.notUsedCheckBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notUsedCheckBox.Location = new System.Drawing.Point(889, 622);
+            this.notUsedCheckBox.Location = new System.Drawing.Point(68, 291);
             this.notUsedCheckBox.Name = "notUsedCheckBox";
-            this.notUsedCheckBox.Size = new System.Drawing.Size(104, 27);
+            this.notUsedCheckBox.Size = new System.Drawing.Size(104, 38);
             this.notUsedCheckBox.TabIndex = 75;
             this.notUsedCheckBox.Text = "Not Used";
+            this.notUsedCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.notUsedCheckBox.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
+            this.searchButton.BackColor = System.Drawing.Color.LightBlue;
             this.searchButton.Location = new System.Drawing.Point(8, 109);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 30);
             this.searchButton.TabIndex = 91;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             // 
             // selectPictureButton
             // 
@@ -820,7 +941,7 @@
             this.unitTypeComboBox.DataSource = this.tblItemSizeBindingSource;
             this.unitTypeComboBox.DisplayMember = "NameAr";
             this.unitTypeComboBox.FormattingEnabled = true;
-            this.unitTypeComboBox.Location = new System.Drawing.Point(3, 133);
+            this.unitTypeComboBox.Location = new System.Drawing.Point(3, 132);
             this.unitTypeComboBox.Name = "unitTypeComboBox";
             this.unitTypeComboBox.Size = new System.Drawing.Size(210, 24);
             this.unitTypeComboBox.TabIndex = 65;
@@ -914,14 +1035,16 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.60422F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.39578F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.06332F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.93668F));
             this.tableLayoutPanel2.Controls.Add(this.itemIDTextBox, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupIDTextBox, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.groupNameLabel, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.itemGroupComboBox, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.barcodeLabel, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.barcodeNumberTextBox, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.quickItemCheckBox, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.notUsedCheckBox, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.nameArLabel, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.nameArabicTextBox, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.nameEnLabel, 1, 5);
@@ -930,17 +1053,18 @@
             this.tableLayoutPanel2.Controls.Add(this.nameShortTextBox, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.idLabel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupIDLabel, 1, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1018, 109);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(999, 105);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 7;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.96429F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.03571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(379, 332);
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.08642F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.91358F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(398, 332);
             this.tableLayoutPanel2.TabIndex = 93;
             // 
             // tableLayoutPanel3
@@ -990,112 +1114,22 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.25039F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.74961F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.25822F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.74178F));
             this.tableLayoutPanel4.Controls.Add(this.wholesalePriceLabel, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.wholesalePriceTextBox, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.VATPercentageTextBox, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.vatPercentageLabel, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.itemNotesTextBox, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.itemNotesLabel, 1, 2);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(758, 447);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(758, 443);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(639, 157);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(639, 161);
             this.tableLayoutPanel4.TabIndex = 95;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameArDataGridViewTextBoxColumn
-            // 
-            this.nameArDataGridViewTextBoxColumn.DataPropertyName = "NameAr";
-            this.nameArDataGridViewTextBoxColumn.HeaderText = "NameAr";
-            this.nameArDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameArDataGridViewTextBoxColumn.Name = "nameArDataGridViewTextBoxColumn";
-            this.nameArDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameArDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameEnDataGridViewTextBoxColumn
-            // 
-            this.nameEnDataGridViewTextBoxColumn.DataPropertyName = "NameEn";
-            this.nameEnDataGridViewTextBoxColumn.HeaderText = "NameEn";
-            this.nameEnDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameEnDataGridViewTextBoxColumn.Name = "nameEnDataGridViewTextBoxColumn";
-            this.nameEnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameEnDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ShortName
-            // 
-            this.ShortName.DataPropertyName = "ShortName";
-            this.ShortName.HeaderText = "ShortName";
-            this.ShortName.MinimumWidth = 6;
-            this.ShortName.Name = "ShortName";
-            this.ShortName.ReadOnly = true;
-            this.ShortName.Width = 125;
-            // 
-            // VAT
-            // 
-            this.VAT.DataPropertyName = "VAT";
-            this.VAT.HeaderText = "VAT";
-            this.VAT.MinimumWidth = 6;
-            this.VAT.Name = "VAT";
-            this.VAT.ReadOnly = true;
-            this.VAT.Width = 125;
-            // 
-            // NotUsed
-            // 
-            this.NotUsed.DataPropertyName = "NotUsed";
-            this.NotUsed.HeaderText = "NotUsed";
-            this.NotUsed.MinimumWidth = 6;
-            this.NotUsed.Name = "NotUsed";
-            this.NotUsed.ReadOnly = true;
-            this.NotUsed.Width = 125;
-            // 
-            // UseTypeID
-            // 
-            this.UseTypeID.DataPropertyName = "UseTypeID";
-            this.UseTypeID.HeaderText = "UseTypeID";
-            this.UseTypeID.MinimumWidth = 6;
-            this.UseTypeID.Name = "UseTypeID";
-            this.UseTypeID.ReadOnly = true;
-            this.UseTypeID.Width = 125;
-            // 
-            // ItemTypeID
-            // 
-            this.ItemTypeID.DataPropertyName = "ItemTypeID";
-            this.ItemTypeID.HeaderText = "ItemTypeID";
-            this.ItemTypeID.MinimumWidth = 6;
-            this.ItemTypeID.Name = "ItemTypeID";
-            this.ItemTypeID.ReadOnly = true;
-            this.ItemTypeID.Width = 125;
-            // 
-            // FilePath
-            // 
-            this.FilePath.DataPropertyName = "FilePath";
-            this.FilePath.HeaderText = "FilePath";
-            this.FilePath.MinimumWidth = 6;
-            this.FilePath.Name = "FilePath";
-            this.FilePath.ReadOnly = true;
-            this.FilePath.Width = 125;
-            // 
-            // ItemNote
-            // 
-            this.ItemNote.DataPropertyName = "ItemNote";
-            this.ItemNote.HeaderText = "ItemNote";
-            this.ItemNote.MinimumWidth = 6;
-            this.ItemNote.Name = "ItemNote";
-            this.ItemNote.ReadOnly = true;
-            this.ItemNote.Width = 125;
             // 
             // InventoryForm
             // 
@@ -1108,8 +1142,6 @@
             this.Controls.Add(this.savedPictureBox);
             this.Controls.Add(this.selectPictureButton);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.notUsedCheckBox);
-            this.Controls.Add(this.quickItemCheckBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1165,10 +1197,10 @@
         private System.Windows.Forms.Label nameArLabel;
         private System.Windows.Forms.Label groupIDLabel;
         private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button undoButton;
+        private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

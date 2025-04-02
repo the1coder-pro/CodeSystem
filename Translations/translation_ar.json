@@ -69,7 +69,10 @@
   "selectPictureButton": "اختر الصورة",
   "searchButton": "بحث",
   "saveButton": "حفظ",
-  "clearButton": "مسح الكل",
+  "editButton": "تعديل",
+  "deleteButton": "حذف",
+  "undoButton": "تراجع",
+  "newButton": "جديد",
   "exitButton": "خروج",
   "inventoryTitleLabel": "الأصناف"
 

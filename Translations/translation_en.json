@@ -69,7 +69,10 @@
   "selectPictureButton": "Upload Picture",
   "searchButton": "Search",
   "saveButton": "Save",
-  "clearButton": "Clear",
+  "editButton": "Edit",
+  "deleteButton": "Delete",
+  "undoButton": "Undo",
+  "newButton": "New",
   "exitButton": "Exit",
   "inventoryTitleLabel": "Categories"
   

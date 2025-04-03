@@ -353,7 +353,7 @@
             this.editButton.BackColor = System.Drawing.Color.White;
             this.editButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
-            this.editButton.Location = new System.Drawing.Point(319, 3);
+            this.editButton.Location = new System.Drawing.Point(161, 3);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(73, 86);
             this.editButton.TabIndex = 4;
@@ -382,7 +382,7 @@
             // 
             this.newButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newButton.Image = ((System.Drawing.Image)(resources.GetObject("newButton.Image")));
-            this.newButton.Location = new System.Drawing.Point(161, 3);
+            this.newButton.Location = new System.Drawing.Point(398, 3);
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(73, 86);
             this.newButton.TabIndex = 2;
@@ -421,6 +421,7 @@
             this.exitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // saveButton
             // 
@@ -429,9 +430,9 @@
             this.saveButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.Black;
             this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.Location = new System.Drawing.Point(398, 3);
+            this.saveButton.Location = new System.Drawing.Point(319, 3);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(74, 86);
+            this.saveButton.Size = new System.Drawing.Size(73, 86);
             this.saveButton.TabIndex = 5;
             this.saveButton.Text = "Save";
             this.saveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -448,12 +449,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.editButton, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.undoButton, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.newButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.deleteButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.exitButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.saveButton, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.saveButton, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.editButton, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.newButton, 5, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -779,7 +780,7 @@
             this.itemColorComboBox.DataSource = this.tblColorBindingSource;
             this.itemColorComboBox.DisplayMember = "NameAr";
             this.itemColorComboBox.FormattingEnabled = true;
-            this.itemColorComboBox.Location = new System.Drawing.Point(3, 309);
+            this.itemColorComboBox.Location = new System.Drawing.Point(3, 310);
             this.itemColorComboBox.Name = "itemColorComboBox";
             this.itemColorComboBox.Size = new System.Drawing.Size(210, 24);
             this.itemColorComboBox.TabIndex = 70;
@@ -941,7 +942,7 @@
             this.unitTypeComboBox.DataSource = this.tblItemSizeBindingSource;
             this.unitTypeComboBox.DisplayMember = "NameAr";
             this.unitTypeComboBox.FormattingEnabled = true;
-            this.unitTypeComboBox.Location = new System.Drawing.Point(3, 132);
+            this.unitTypeComboBox.Location = new System.Drawing.Point(3, 133);
             this.unitTypeComboBox.Name = "unitTypeComboBox";
             this.unitTypeComboBox.Size = new System.Drawing.Size(210, 24);
             this.unitTypeComboBox.TabIndex = 65;

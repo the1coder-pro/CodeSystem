@@ -91,7 +91,7 @@ namespace CodeSystem.Forms
          
 
             fillComboBoxes();
-            fillFormDemoData();
+            //fillFormDemoData();
             this.tblItemOtherData1TableAdapter.Fill(this.reportDataSet.tblItemOtherData1);
             this.tblItemBalance1TableAdapter.Fill(this.reportDataSet.tblItemBalance1);
             this.tblItemGroupTableAdapter.Fill(this.reportDataSet.tblItemGroup);
@@ -595,9 +595,19 @@ namespace CodeSystem.Forms
                 MessageBox.Show(ex.Message);
             }
         }
-        
-      
 
-     
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            closeForm();
+        }
+
+        public void closeForm()
+        {
+            Control parent = this.Parent;
+            if (parent is FlowLayoutPanel flowLayoutPanel)
+            {
+                flowLayoutPanel.Controls.Clear();
+            }
+        }
     }
 }
